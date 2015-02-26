@@ -1,0 +1,416 @@
+/*
+Desenvolvido por : Evaldo Sávio Araújo, Gabriel Gonzalez, Jailson Leocadio, Nayra Oliveira
+		
+*/
+/* Complementos para Primefaces autocomplete*/
+.ui-autocomplete input {
+	min-width: 0px !important;
+}
+
+.ui-autocomplete button {
+	position: absolute !important;
+}
+
+.container_24  .grid_24 .ui-autocomplete input {
+	width: 97.53% !important;
+}
+
+.container_24  .grid_24 .ui-autocomplete button {
+	width: 2.47% !important;
+}
+
+.container_24  .grid_23 .ui-autocomplete input {
+	width: 97.42% !important;
+}
+
+.container_24  .grid_23 .ui-autocomplete button {
+	width: 2.58% !important;
+}
+
+.container_24  .grid_22 .ui-autocomplete input {
+	width: 97.3% !important;
+}
+
+.container_24  .grid_22 .ui-autocomplete button {
+	width: 2.7% !important;
+}
+
+.container_24  .grid_21 .ui-autocomplete input {
+	width: 97.17% !important;
+}
+
+.container_24  .grid_21 .ui-autocomplete button {
+	width: 2.83% !important;
+}
+
+.container_24  .grid_20 .ui-autocomplete input {
+	width: 97.05% !important;
+}
+
+.container_24  .grid_20 .ui-autocomplete button {
+	width: 2.95% !important;
+}
+
+.container_24  .grid_19 .ui-autocomplete input {
+	width: 96.9% !important;
+}
+
+.container_24  .grid_19 .ui-autocomplete button {
+	width: 3.1% !important;
+}
+
+.container_24  .grid_18 .ui-autocomplete input {
+	width: 96.7% !important;
+}
+
+.container_24  .grid_18 .ui-autocomplete button {
+	width: 3.3% !important;
+}
+
+.container_24  .grid_17 .ui-autocomplete input {
+	width: 96.5% !important;
+}
+
+.container_24  .grid_17 .ui-autocomplete button {
+	width: 3.5% !important;
+}
+
+.container_24  .grid_16 .ui-autocomplete input {
+	width: 96.3% !important;
+}
+
+.container_24  .grid_16 .ui-autocomplete button {
+	width: 3.7% !important;
+}
+
+.container_24  .grid_15 .ui-autocomplete input {
+	width: 96.0% !important;
+}
+
+.container_24  .grid_15 .ui-autocomplete button {
+	width: 4.0% !important;
+}
+
+.container_24  .grid_14 .ui-autocomplete input {
+	width: 95.7% !important;
+}
+
+.container_24  .grid_14 .ui-autocomplete button {
+	width: 4.3% !important;
+}
+
+.container_24  .grid_13 .ui-autocomplete input {
+	width: 95.4% !important;
+}
+
+.container_24  .grid_13 .ui-autocomplete button {
+	width: 4.6% !important;
+}
+
+.container_24  .grid_12 .ui-autocomplete input {
+	width: 95.0% !important;
+}
+
+.container_24  .grid_12 .ui-autocomplete button {
+	width: 5.0% !important;
+}
+
+.container_24  .grid_11 .ui-autocomplete input {
+	width: 94.4% !important;
+}
+
+.container_24  .grid_11 .ui-autocomplete button {
+	width: 5.6% !important;
+}
+
+.container_24  .grid_10 .ui-autocomplete input {
+	width: 93.8% !important;
+}
+
+.container_24  .grid_10 .ui-autocomplete button {
+	width: 6.2% !important;
+}
+
+.container_24  .grid_9 .ui-autocomplete input {
+	width: 93.1% !important;
+}
+
+.container_24 .grid_9 .ui-autocomplete button {
+	width: 6.9% !important;
+}
+
+.container_24 .grid_8 .ui-autocomplete input {
+	width: 92.2% !important;
+}
+
+.container_24 .grid_8 .ui-autocomplete button {
+	width: 7.8% !important;
+}
+
+.container_24 .grid_7 .ui-autocomplete input {
+	width: 91.0% !important;
+}
+
+.container_24 .grid_7 .ui-autocomplete button {
+	width: 9% !important;
+}
+
+.container_24 .grid_6 .ui-autocomplete input {
+	width: 89.3% !important;
+}
+
+.container_24 .grid_6 .ui-autocomplete button {
+	width: 10.7% !important;
+}
+
+.container_24 .grid_5 .ui-autocomplete input {
+	width: 87.0% !important;
+}
+
+.container_24 .grid_5 .ui-autocomplete button {
+	width: 13.0% !important;
+}
+
+.container_24 .grid_4 .ui-autocomplete input {
+	width: 83.5% !important;
+}
+
+.container_24 .grid_4 .ui-autocomplete button {
+	width: 16.5% !important;
+}
+
+.container_24 .grid_3 .ui-autocomplete input {
+	width: 74.8% !important;
+}
+
+.container_24 .grid_3 .ui-autocomplete button {
+	width: 23.2% !important;
+}
+
+.container_24 .grid_2 .ui-autocomplete input {
+	width: 61.0% !important;
+}
+
+.container_24 .grid_2 .ui-autocomplete button {
+	width: 39.0% !important;
+}
+
+.container_24 .grid_1 .ui-autocomplete input {
+	width: 10.0% !important;
+}
+
+.container_24 .grid_1 .ui-autocomplete button {
+	width: 90.0% !important;
+}
+/* Complementos para Primefaces datapicker*/
+.ui-datepicker-trigger {
+	position: absolute !important;
+}
+
+.grid_24 .hasDatepicker {
+	width: 97.53% !important;
+}
+
+.grid_24 .ui-datepicker-trigger {
+	width: 2.47% !important;
+}
+
+.grid_23 .hasDatepicker {
+	width: 97.42% !important;
+}
+
+.grid_23 .ui-datepicker-trigger {
+	width: 2.58% !important;
+}
+
+.grid_22 .hasDatepicker {
+	width: 97.3% !important;
+}
+
+.grid_22 .ui-datepicker-trigger {
+	width: 2.7% !important;
+}
+
+.grid_21 .hasDatepicker {
+	width: 97.17% !important;
+}
+
+.grid_21 .ui-datepicker-trigger {
+	width: 2.83% !important;
+}
+
+.grid_20 .hasDatepicker {
+	width: 97.05% !important;
+}
+
+.grid_20 .ui-datepicker-trigger {
+	width: 2.95% !important;
+}
+
+.grid_19 .hasDatepicker {
+	width: 96.9% !important;
+}
+
+.grid_19 .ui-datepicker-trigger {
+	width: 3.1% !important;
+}
+
+.grid_18 .hasDatepicker {
+	width: 96.7% !important;
+}
+
+.grid_18 .ui-datepicker-trigger {
+	width: 3.3% !important;
+}
+
+.grid_17 .hasDatepicker {
+	width: 96.5% !important;
+}
+
+.grid_17 .ui-datepicker-trigger {
+	width: 3.5% !important;
+}
+
+.grid_16 .hasDatepicker {
+	width: 96.3% !important;
+}
+
+.grid_16 .ui-datepicker-trigger {
+	width: 3.7% !important;
+}
+
+.grid_15 .hasDatepicker {
+	width: 96.0% !important;
+}
+
+.grid_15 .ui-datepicker-trigger {
+	width: 4.0% !important;
+}
+
+.grid_14 .hasDatepicker {
+	width: 95.7% !important;
+}
+
+.grid_14 .ui-datepicker-trigger {
+	width: 4.3% !important;
+}
+
+.grid_13 .hasDatepicker {
+	width: 95.4% !important;
+}
+
+.grid_13 .ui-datepicker-trigger {
+	width: 4.6% !important;
+}
+
+.grid_12 .hasDatepicker {
+	width: 95.0% !important;
+}
+
+.grid_12 .ui-datepicker-trigger {
+	width: 5.0% !important;
+}
+
+.grid_11 .hasDatepicker {
+	width: 94.4% !important;
+}
+
+.grid_11 .ui-datepicker-trigger {
+	width: 5.6% !important;
+}
+
+.grid_10 .hasDatepicker {
+	width: 93.8% !important;
+}
+
+.grid_10 .ui-datepicker-trigger {
+	width: 6.2% !important;
+}
+
+.grid_9 span .hasDatepicker {
+	width: 93.1% !important;
+}
+
+.grid_9 span .ui-datepicker-trigger {
+	width: 6.9% !important;
+}
+
+.grid_8 .hasDatepicker {
+	width: 92.2% !important;
+}
+
+.grid_8 .ui-datepicker-trigger {
+	width: 7.8% !important;
+}
+
+.grid_7 .hasDatepicker {
+	width: 91.0% !important;
+}
+
+.grid_7 .ui-datepicker-trigger {
+	width: 9% !important;
+}
+
+.grid_6 .hasDatepicker {
+	width: 89.3% !important;
+}
+
+.grid_6 .ui-datepicker-trigger {
+	width: 10.7% !important;
+}
+
+.grid_5 .hasDatepicker {
+	width: 87.0% !important;
+}
+
+.grid_5 .ui-datepicker-trigger {
+	width: 13.0% !important;
+}
+
+.grid_4 .hasDatepicker {
+	width: 83.5% !important;
+}
+
+.grid_4 .ui-datepicker-trigger {
+	width: 16.5% !important;
+}
+
+.grid_3 .hasDatepicker {
+	width: 74.8% !important;
+}
+
+.grid_3 .ui-datepicker-trigger {
+	width: 23.2% !important;
+}
+
+.grid_2 .hasDatepicker {
+	width: 61.0% !important;
+}
+
+.grid_2 .ui-datepicker-trigger {
+	width: 39.0% !important;
+}
+
+.grid_1 .hasDatepicker {
+	width: 10.0% !important;
+}
+
+.grid_1 .ui-datepicker-trigger {
+	width: 90.0% !important;
+}
+
+.ui-inputtext,.ui-inputmask {
+	width: 100%;
+}
+
+.ui-selectonemenu {
+	width: 100% !important;
+}
+
+.ui-selectonemenu .ui-helper-hidden-accessible {
+	width: 100% !important;
+}
+
+.ui-selectonemenu label {
+	width: 100% !important;
+}

@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="container_24">
+	<h:form id="termoCompromissoReportForm" prependId="false">
+		<p:messages id="messages" />
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix grid_24">
+
+			<div class="grid_2" style="padding-top: 5px !important">
+				<p:outputLabel value="#{lb['repasse.numeroEmpenho']}"
+					for="numeroEmpenho" />
+			</div>
+			<div class="grid_6" style="padding-top: 5px !important">
+				<p:outputLabel id="numeroEmpenho"
+					value="#{repasseController.repasse.numeroEmpenho}" />
+			</div>
+			<div class="grid_3" style="padding-top: 5px !important">
+				<p:outputLabel value="#{lb['repasse.numeroProcesso']}"
+					for="numeroProcesso" />
+			</div>
+			<div class="grid_5">
+				<p:inputText id="numeroProcesso"
+					value="#{repasseController.repasse.numeroProcesso}" required="true" onkeypress="mascara(this,number);"/>
+			</div>
+
+			<div class="grid_3" style="padding-top: 5px !important">
+				<p:outputLabel value="#{lb['repasse.dataEmissao']}"
+					for="dataEmissao" />
+			</div>
+			<div class="grid_5">
+				<p:calendar id="dataEmissao"
+					value="#{repasseController.repasse.dataEmissao}" showOn="button"
+					pattern="dd/MM/yyyy" locale="pt" styleClass="fieldFullWidth"
+					navigator="true" effect="fadeIn" />
+			</div>
+			<div class="clear" />
+			<div class="grid_2" style="padding-top: 5px !important">
+				<p:outputLabel value="#{lb['unidade']}" for="unidadeAC" />
+			</div>
+			<div class="grid_22" style="padding-top: 5px !important">
+				<p:autoComplete id="unidadeAC" minQueryLength="3"
+					value="#{repasseController.repasse.unidade}" required="true"
+					completeMethod="#{unidadeController.autocompletar}" queryDelay="3"
+					widgetVar="unidadeAC" var="var" itemLabel="#{var.nome}"
+					itemValue="#{var}" process="@this" dropdown="true"
+					converter="autocompleteConverter" forceSelection="true">
+					<f:attribute name="entityClass"
+								value="br.com.sts.ddum.domain.entities.Unidade" />
+				</p:autoComplete>
+			</div>
+
+			<div class="clear" />
+
+			<p:commandButton value="Gerar Repasse" update="@form"
+				actionListener="#{repasseController.gerarRepasse}"
+				styleClass="w4 r6" />
+			<p:commandButton id="limparCommandButton"
+				value="#{wd['button.clean']}" icon="ui-icon-arrowrefresh-1-w"
+				actionListener="#{repasseController.init}" update="@form"
+				process="@this" styleClass="w4 r7">
+			</p:commandButton>
+		</p:panel>
+	</h:form>
+</div>
+</html>

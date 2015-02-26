@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+
+
+	<!-- Seta anotaÃ§oes para serem usadas pelo Spring -->
+	<context:annotation-config />
+	<!-- Define o pacote onde o Spring vai procurar por beans anotados -->
+	<context:component-scan
+		base-package="br.com.sts.ddum.domain.repository.interfaces, br.com.sts.ddum.domain.repository.impls, br.com.sts.ddum.domain.interceptors, br.com.sts.ddum.domain.utils,br.com.sts.ddum.domain.handlers, br.com.sts.ddum.view.controllers, br.com.sts.ddum.service.interfaces, br.com.sts.ddum.service.impls" />
+
+	<!-- Indica onde se encontram as interfaces que estendem JpaRepository -->
+	<jpa:repositories base-package="br.com.sts.ddum.domain.repository.interfaces" />
+
+	<!-- define que as transaÃ§oes irao ser anotadas -->
+	<tx:annotation-driven />
+
+	<!-- cache -->
+	<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+		id="ehCacheManagerBean" />
+	<bean class="org.springframework.cache.ehcache.EhCacheFactoryBean"
+		id="ehCacheFactoryBean">
+		<property name="cacheManager" ref="ehCacheManagerBean" />
+	</bean>
+
+	<!-- Configuracao do Banco de Dados -->
+	<!-- <bean id="dataSource" -->
+	<!-- class="org.springframework.jdbc.datasource.DriverManagerDataSource" -->
+	<!-- p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.databaseurl}" -->
+	<!-- p:username="${jdbc.username}" p:password="${jdbc.password}" /> -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://192.10.0.10:5432/ddum"/>
+<!-- 		<property name="url" value="jdbc:postgresql://localhost:5432/ddum"/> -->
+		<property name="username" value="postgres" />
+		<property name="password" value="postgres" />
+	</bean>
+	<!-- Configuracao do Hibernate -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="ddumPU" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
+				<property name="showSql" value="true" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Configuracao do gerente de transacoes do Spring -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+		</property>
+	</bean>
+
+	<bean id="entityManager"
+		class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean class="br.com.sts.ddum.domain.interceptors.ServiceInterceptor" />
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".xhtml" />
+	</bean>
+
+	<aop:aspectj-autoproxy />
+
+</beans>

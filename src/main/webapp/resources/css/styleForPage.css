@@ -1,0 +1,727 @@
+div.ui-tabs-panel.ui-widget-content.ui-corner-bottom {
+	padding-top: 5px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+fieldset.fullLegend>div.ui-fieldset-content {
+	text-align: left;
+}
+
+.payClass {
+	background-image: url("../icons/cash_stack_add.png");
+}
+
+.ui-panelmenu .ui-panelmenu-header a {
+	font-size: 0.8em;
+}
+
+span>input.ui-inputfield {
+	margin-top: 0px;
+}
+
+span.ui-row-editor>span.ui-icon.ui-icon-pencil {
+	margin-left: 10px;
+}
+
+input.ui-inputfield.ui-inputtext, input.ui-inputfield.hasDatepicker,
+	input.ui-inputfield.ui-autocomplete-input {
+	font-weight: normal;
+}
+
+img[class^="w"] {
+	height: 25px;
+}
+
+.buttonIcon {
+	margin-top: 0px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	margin-left: 0px;
+	border-bottom-width: 1px;
+	margin-bottom: 0px;
+	height: 21px;
+	width: 52px;
+}
+
+.buttonIcon>span.ui-button-text {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	width: 48px;
+	height: 18px;
+}
+
+div.ui-layout-unit-content.ui-widget-content {
+	padding: 0px;
+}
+
+a.selectedMenu {
+	border: 1px solid #AAA;
+	background: #ADC7CD 50% 50% repeat-x;
+	background-repeat-x: repeat;
+	background-repeat-y: no-repeat;
+	background-attachment: initial;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: #ADC7CD;
+	font-weight: normal;
+	color: #212121;
+	outline: none;
+	background-repeat-x: repeat;
+	background-repeat-y: no-repeat;
+	background-attachment: initial;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: #C2C2C2;
+}
+
+div.ui-tabs.ui-widget.ui-widget-content.ui-corner-all.ui-hidden-container.ui-tabs-top
+	{
+	padding: 0px;
+	border: 0px;
+}
+
+div.ui-panel.ui-widget.ui-widget-content.ui-corner-all {
+	margin-bottom: 5px;
+}
+
+div.selectedMenu {
+	/* 	background: -moz-linear-gradient(center top, rgba(0, 0, 255, 0.8), */
+	/* 		rgba(255, 255, 255, 0) ) repeat scroll 0 0 #C4C4C4; */
+	border: 1px solid #A8A8A8;
+	color: #268CBB;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	height: 16px;
+	padding-top: 0.4em;
+	padding-right: 0.2em;
+	padding-bottom: 0.4em;
+	padding-left: 0.4em;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #A8A8A8;
+	border-right-color: #A8A8A8;
+	border-bottom-color: #A8A8A8;
+	border-left-color: #A8A8A8;
+	color: #333;
+	font-weight: bold;
+	/* 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7); */
+	display: block;
+	visibility: visible;
+	font-family: Arial, sans-serif;
+	font-size: 1.1em;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255,
+		0.796875)), to(rgba(255, 255, 255, 0)));
+	background-repeat-x: initial;
+	background-repeat-y: initial;
+	background-attachment: initial;
+	background-position-x: initial;
+	background-position-y: initial;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: #268CBB;
+}
+
+span.headerTitle {
+	color: #333;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7);
+	visibility: visible;
+	font-family: Arial, sans-serif;
+	font-size: 0.9em;
+}
+
+label.ui-outputlabel {
+	text-align: right;
+	padding-right: 10px;
+	padding-bottom: 2px;
+}
+
+button.icon {
+	height: 18px;
+	width: 18px;
+}
+
+input.ui-inputfield {
+	margin-top: 5px;
+}
+
+span.ui-autocomplete>input.ui-autocomplete-input {
+	width: 100%;
+	/* 	min-width: 201px; */
+}
+
+span.ui-autocomplete {
+	margin-left: 0px;
+	/* 	margin-right: 100%; */
+}
+
+span.ui-autocomplete>button.ui-button-icon-only, span[class^="w"]>button.ui-button-icon-only
+	{
+	width: 8%;
+	max-width: 28px;
+	min-width: 20px;
+	margin-top: 0px;
+	position: relative;
+	right: -2px;
+	top: 0px;
+}
+
+table.ui-selectoneradio {
+	height: 25px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+div.ui-radiobutton.ui-widget {
+	margin-right: 2px;
+	width: 15px;
+}
+
+td>label {
+	margin-right: 10px;
+}
+
+table.ui-selectoneradio tbody tr td {
+	display: inline-block;
+	vertical-align: text-top;
+	font-weight: bold;
+}
+
+button.ui-button-text-only {
+	margin-right: 0;
+}
+
+div.ui-fieldset-content div.col5:first-child {
+	margin-right: 0.5%;
+}
+
+fieldset>div.ui-fieldset-content {
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+}
+
+.w1, .w2, .w3, .w4, .w5, .w6, .w7, .w8, .w9, .w10, .w11, .w12, .w13,
+	.w14, .w15, .w16, .w17, .w18, .w19, .w20, input, label[class^="w"],
+	button[class^="w"] {
+	vertical-align: bottom;
+	display: inline-block;
+	position: relative;
+	margin-top: 5px;
+	border-collapse: separate;
+	border-spacing: 2;
+	box-sizing: border-box;
+	-moz-box-sizing: padding-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+.col6, .col5, .col4 {
+	display: inline-table;
+	position: relative;
+}
+
+.col6 {
+	width: 67.3%
+}
+
+.col5 {
+	width: 48.3%
+}
+
+.col4 {
+	width: 31.4%
+}
+
+span.w1, div.w1, .w1 {
+	width: 5%
+}
+
+span.w2, div.w2, .w2 {
+	width: 10%
+}
+
+span.w3, div.w3, .w3 {
+	width: 15%
+}
+
+span.w4, div.w4, .w4 {
+	width: 20%
+}
+
+span.w5, div.w5, .w5 {
+	width: 25%
+}
+
+span.w6, div.w6, .w6 {
+	width: 30%
+}
+
+span.w7, div.w7, .w7 {
+	width: 35%
+}
+
+span.w8, div.w8, .w8 {
+	width: 40%
+}
+
+span.w9, div.w9, .w9 {
+	width: 45%
+}
+
+span.w10, div.w10, .w10 {
+	width: 50%
+}
+
+span.w11, div.w11, .w11 {
+	width: 55%
+}
+
+span.w12, div.w12, .w12 {
+	width: 60%
+}
+
+span.w13, div.w13, .w13 {
+	width: 65%
+}
+
+span.w14, div.w14, .w14 {
+	width: 70%
+}
+
+span.w15, div.w15, .w15 {
+	width: 75%
+}
+
+span.w16, div.w16, .w16 {
+	width: 80%
+}
+
+span.w17, div.w17, .w17 {
+	width: 85%
+}
+
+span.w18, div.w18, .w18 {
+	width: 90%
+}
+
+span.w19, div.w19, .w19 {
+	width: 95%
+}
+
+span.w20, div.w20, .w20 {
+	width: 99%
+}
+
+span[class^="w"]>input.hasDatepicker {
+	width: 100%;
+}
+
+.col4 span.w1>input.hasDatepicker {
+	width: 0%;
+}
+
+.col4 span.w2>input.hasDatepicker {
+	width: 46%;
+}
+
+.col4 span.w3>input.hasDatepicker {
+	width: 64%;
+}
+
+.col4 span.w4>input.hasDatepicker {
+	width: 73.5%;
+}
+
+.col4 span.w5>input.hasDatepicker {
+	width: 78.3%;
+}
+
+.col4 span.w6>input.hasDatepicker {
+	width: 81.5%;
+}
+
+.col4 span.w7>input.hasDatepicker {
+	width: 84.2%;
+}
+
+.col4 span.w8>input.hasDatepicker {
+	width: 86.8%;
+}
+
+.col4 span.w9>input.hasDatepicker {
+	width: 88.3%;
+}
+
+.col4 span.w10>input.hasDatepicker {
+	width: 89.7%;
+}
+
+.col5 span.w1>input.hasDatepicker {
+	width: 30%;
+}
+
+.col5 span.w2>input.hasDatepicker {
+	width: 65%;
+}
+
+.col5 span.w3>input.hasDatepicker {
+	width: 77%;
+}
+
+.col5 span.w4>input.hasDatepicker {
+	width: 82.5%;
+}
+
+.col5 span.w5>input.hasDatepicker {
+	width: 86.3%;
+}
+
+.col5 span.w6>input.hasDatepicker {
+	width: 88.5%;
+}
+
+.col5 span.w7>input.hasDatepicker {
+	width: 90.2%;
+}
+
+.col5 span.w8>input.hasDatepicker {
+	width: 91.2%;
+}
+
+.col5 span.w9>input.hasDatepicker {
+	width: 92.3%;
+}
+
+.col5 span.w10>input.hasDatepicker {
+	width: 93%;
+}
+
+.col6 span.w1>input.hasDatepicker {
+	width: 48%;
+}
+
+.col6 span.w2>input.hasDatepicker {
+	width: 74%;
+}
+
+.col6 span.w3>input.hasDatepicker {
+	width: 83%;
+}
+
+.col6 span.w4>input.hasDatepicker {
+	width: 86.6%;
+}
+
+.col6 span.w5>input.hasDatepicker {
+	width: 89.6%;
+}
+
+.col6 span.w6>input.hasDatepicker {
+	width: 91.5%;
+}
+
+.col6 span.w7>input.hasDatepicker {
+	width: 92.7%;
+}
+
+.col6 span.w8>input.hasDatepicker {
+	width: 93.6%;
+}
+
+.col6 span.w9>input.hasDatepicker {
+	width: 94.3%;
+}
+
+.col6 span.w10>input.hasDatepicker {
+	width: 94.9%;
+}
+
+.r1 {
+	left: 5%
+}
+
+.r2 {
+	left: 10%
+}
+
+.r3 {
+	left: 15%
+}
+
+.r4 {
+	left: 20%
+}
+
+.r5 {
+	left: 25%
+}
+
+.r6 {
+	left: 30%
+}
+
+.r7 {
+	left: 35%
+}
+
+.r8 {
+	left: 40%
+}
+
+.r9 {
+	left: 45%
+}
+
+.r10 {
+	left: 50%
+}
+
+[class*="span"] {
+	float: left;
+	margin-left: 20px;
+}
+
+.clear {
+	margin-left: -20px;
+	*zoom: 1;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+}
+
+.clear:after {
+	clear: both;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.columnRight {
+	text-align: right;
+	font-weight: bold;
+	!
+	important
+}
+
+.columnLeft {
+	text-align: left;
+	font-weight: bold;
+	!
+	important
+}
+
+.columnShow td {
+	font-weight: normal;
+	text-align: left;
+}
+
+.columnShow label {
+	text-align: right;
+	font-weight: bold;
+	!
+	important
+}
+
+.noBorders tr, .noBorders td {
+	background: none !important;
+	border: none !important;
+}
+
+.ui-autocomplete .ui-icon-triangle-1-s {
+	background-position: -160px -112px;
+}
+
+.ui-radiobutton {
+	line-height: 16px;
+	margin: 3px 0;
+	position: relative;
+	width: 4px;
+}
+
+.ui-radiobutton .ui-radiobutton-box {
+	border-radius: 10px 10px 10px 10px;
+	bottom: 0;
+	left: 0;
+	line-height: 16px;
+	position: relative;
+}
+
+.dataPicker {
+	margin-right: 100%;
+}
+
+/* .ui-paginator>* { */
+/* 	float: left; */
+/* } */
+.ui-autocomplete.state {
+	margin-left: -10px; ! important;
+	margin-right: -2px;
+	!
+	important;
+}
+
+.stateP {
+	margin-left: -40px;
+	!
+	important;
+}
+
+.required {
+	text-align: right; ! important;
+	color: red;
+	!
+	important
+}
+
+.panel {
+	margin-bottom: 1em;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.fill-all-width {
+	width: 100%;
+}
+
+.fill-almost-all-width {
+	width: 90%;
+}
+
+.fill-almost-all-width input {
+	width: 90%;
+}
+
+.image-upload.label {
+	font-size: 16px;
+}
+
+.image-upload .fileupload-content {
+	display: none;
+}
+
+.image-upload .fileupload-buttonbar {
+	border: none;
+	background: none;
+}
+
+.ui-widget-content {
+	color: #000000;
+	!
+	important;
+	/* 	font-weight:bold; ! important; */
+}
+
+.ui-widget-header {
+	background-color: #268CBB;
+	!
+	important;
+}
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield
+	{
+	/* 	box-shadow: none !important; */
+	
+}
+
+.ui-widget-header {
+	color: #FFFFFF;
+	text-shadow: none;
+}
+
+span.headerTitle {
+	color: #FFFFFF;
+	text-shadow: none !important;
+}
+/*  botões de autocomplete */
+.container_24 .grid_6 .ui-autocomplete button{
+	margin-top: 5px !important;
+}
+/*
+Remoção dos botões do componente de upload
+
+@autor maycon francis
+*/
+.uploadFile .fileupload-buttonbar {
+	padding: 0px 0px !important;
+	border: none;
+}
+
+.fileupload-buttonbar {
+	font-size: 11px;
+	width: 69%;
+}
+
+.uploadFile table {
+	display: none !important;
+}
+
+.uploadFile .fileupload-content {
+	display: none !important;
+}
+
+.preview {
+	display: none !important;
+}
+
+.ui-selectonemenu {
+	display: inline;
+	float: right;
+	position: relative;
+	margin-left: 5%;
+	margin-right: -1%;
+}
+.ui-outputlabel-rfi {
+	color: #ff0000 !important;
+}
+
+/* Foi adicionado o estilo para botões com a
+funcionalidade de Adicionar itens em uma tabela
+
+@author  maycon */
+.buttonsAddAction {
+	text-align: center !important;
+	margin: 20px 0 !important;
+}
+
+.buttonsAddAction button {
+	margin: 0px 5px 5px 5px;
+}

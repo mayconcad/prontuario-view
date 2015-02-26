@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:outputScript name="utils.js" library="javascript" />
+<div class="selectedMenu">
+	<span class="headerTitle">Gerar Repasse</span>
+</div>
+
+<p:tabView id="repasseTabView">
+
+	<p:ajax event="tabClose" process="@all" />
+	<p:ajax event="tabChange" process="@all" />
+
+	<p:tab id="createTab" title="Repasse">
+		<ui:include src="gerarRepasse.xhtml" />
+	</p:tab>
+</p:tabView>
+</html>

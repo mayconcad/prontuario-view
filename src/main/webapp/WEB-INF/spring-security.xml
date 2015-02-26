@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd
+	http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+
+	<http use-expressions="true" auto-config="true">
+		<intercept-url pattern="/pages/**" access="isAuthenticated()" />
+		<intercept-url pattern="/**" access="permitAll" />
+		<form-login login-page="/login.xhtml" default-target-url="/pages/index.xhtml"
+			authentication-failure-url="/login.xhtml" />
+<!-- 		<logout logout-url="/logout" /> -->
+        <access-denied-handler error-page="/semPermissao.jsf" />
+	</http>
+
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
+		<beans:constructor-arg value="256" />
+	</beans:bean>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService">
+			<password-encoder ref="passwordEncoder" />
+		</authentication-provider>
+	</authentication-manager>
+
+
+<global-method-security secured-annotations="enabled" 
+      jsr250-annotations="enabled" />
+ 
+<!-- 	<global-method-security jsr250-annotations="enabled" -->
+<!-- 		pre-post-annotations="enabled" access-decision-manager-ref="aclDecisionManager"> -->
+<!-- 		<expression-handler ref="methodExprHandler" /> -->
+<!-- 	</global-method-security> -->
+	
+	
+	<!-- ACL -->
+
+<!-- 
+	<beans:bean class="br.com.sts.spring.security.AffirmativeBasedDecision"
+		id="aclDecisionManager">
+		<beans:constructor-arg>
+			<beans:list>
+				<beans:bean
+					class="org.springframework.security.access.vote.CustomRoleHierarchyVoter">
+					<beans:constructor-arg ref="dataSource" />
+				</beans:bean>
+				<beans:bean
+					class="org.springframework.security.access.prepost.PreInvocationAuthorizationAdviceVoter">
+					<beans:constructor-arg ref="preInvocationAdvice" />
+				</beans:bean>
+			</beans:list>
+		</beans:constructor-arg>
+	</beans:bean>
+ -->
+
+	<beans:bean
+		class="org.springframework.security.acls.jdbc.JdbcMutableAclService"
+		id="aclService">
+		<beans:constructor-arg ref="dataSource" />
+		<beans:constructor-arg ref="lookupStrategy" />
+		<beans:constructor-arg ref="ehCacheAclCache" />
+	</beans:bean>
+
+	<!-- TODO: ultimo parametro estÃ¡ depreciado -->
+	<beans:bean
+		class="org.springframework.security.acls.jdbc.BasicLookupStrategy" id="lookupStrategy">
+		<beans:constructor-arg ref="dataSource" />
+		<beans:constructor-arg ref="ehCacheAclCache" />
+		<beans:constructor-arg ref="aclAuthzStrategy" />
+		<beans:constructor-arg ref="aclAuditLogger" />
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.security.acls.domain.ConsoleAuditLogger"
+		id="aclAuditLogger" />
+
+	<beans:bean
+		class="org.springframework.security.acls.domain.AclAuthorizationStrategyImpl"
+		id="aclAuthzStrategy">
+		<beans:constructor-arg>
+			<beans:array>
+				<beans:ref local="aclAdminAuthority" />
+				<beans:ref local="aclAdminAuthority" />
+				<beans:ref local="aclAdminAuthority" />
+			</beans:array>
+		</beans:constructor-arg>
+	</beans:bean>
+	<beans:bean
+		class="org.springframework.security.core.authority.SimpleGrantedAuthority"
+		id="aclAdminAuthority">
+		<beans:constructor-arg value="ROLE_ADMIN" />
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler"
+		id="methodExprHandler">
+		<beans:property name="permissionEvaluator" ref="aclPermissionEvaluator" />
+	</beans:bean>
+	<beans:bean class="org.springframework.security.acls.AclPermissionEvaluator"
+		id="aclPermissionEvaluator">
+		<beans:constructor-arg ref="aclService" />
+	</beans:bean>
+
+	<beans:bean id="preInvocationAdvice"
+		class="org.springframework.security.access.expression.method.ExpressionBasedPreInvocationAdvice">
+		<beans:property name="expressionHandler" ref="methodExprHandler" />
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.security.acls.domain.EhCacheBasedAclCache"
+		id="ehCacheAclCache">
+		<beans:constructor-arg ref="ehCacheFactoryBean" />
+	</beans:bean>
+	
+	
+	
+	
+	
+	
+	
+	
+<!-- 	<http auto-config="true" access-denied-page="/negado.xhtml"> -->
+<!-- 		<intercept-url pattern="/pages/**" access="ROLE_ADMIN" /> -->
+<!-- 		<form-login login-page="/login.xhtml" -->
+<!-- 			authentication-failure-url="/login.xhtml?error=true" /> -->
+<!-- 	</http> -->
+
+	
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider> -->
+<!-- 	    <password-encoder hash="sha-256" /> -->
+<!-- 			<user-service> -->
+<!-- 				<user name="admin" password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" authorities="ROLE_ADMIN" /> -->
+<!-- 			</user-service> -->
+<!-- 		</authentication-provider> -->
+<!-- 		<authentication-provider> -->
+<!-- 		    <password-encoder hash="sha-256" /> -->
+<!-- 			<user-service> -->
+<!-- 				<user name="andrea" password="5f3d6952c5c5e22077fabf461de80f1ce475752fe75afcf5ca46bac438405619" authorities="ROLE_FUNC" /> -->
+<!-- 			</user-service> -->
+<!-- 		</authentication-provider> -->
+<!-- 	</authentication-manager> -->
+
+</beans:beans>

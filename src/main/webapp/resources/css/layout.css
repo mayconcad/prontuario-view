@@ -1,0 +1,902 @@
+/*CONTEÚDO DO ARQUIVO style.css*/
+.ui-datatable .ui-datatable-even {
+	background: repeat-X scroll #FDF9E1;
+}
+
+.buttonsGroup .ui-button {
+	margin: 20px 5px 20px 5px;
+	width: 140px;
+}
+
+.buttonsGroup {
+	text-align: center;
+	width: 100%
+}
+
+.columnRight label { /*font-weight: bold !important;*/
+	text-align: right;
+	float: right;
+}
+
+.columnsOptions2 {
+	text-align: center;
+	width: 100px
+}
+
+.columnsOptions2 .ui-button {
+	margin: 0px 2x 0px 2px
+}
+
+.columnsOptions3 {
+	text-align: center;
+	width: 140px
+}
+
+.columnsOptions3 .ui-button {
+	margin: 0px 2px 0px 2px
+}
+
+.image-upload.label {
+	font-size: 16px;
+}
+
+.image-upload .fileupload-content {
+	display: none;
+}
+
+.image-upload .fileupload-buttonbar {
+	border: none;
+	background: none;
+	margin-left: 12%;
+}
+
+.panel-upload {
+	height: 250px;
+	margin-top: -5px;
+	margin-right: 0px;
+	box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.8);
+	text-align: center;
+}
+
+.ui-picklist-list {
+	width: 100% !important;
+}
+
+.ui-picklist-filter {
+	width: 100% !important;
+}
+
+.ui-picklist {
+	width: 100% !important;
+}
+/*FIM CONTEÚDO DO ARQUIVO style.css*/
+label[class^="w"] {
+	text-align: right;
+	right: 6px;
+}
+
+span.ui-autocomplete>input.ui-autocomplete-input {
+	width: 90%;
+	min-width: 201px;
+}
+
+span.ui-autocomplete {
+	margin-left: 0px;
+}
+
+.ui-confirm-dialog .ui-dialog-buttonpane button {
+	color: black !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: center !important;
+}
+
+span.ui-autocomplete>button.ui-button-icon-only, span[class^="w"]>button.ui-button-icon-only
+	{
+	width: 25px;
+	height: 25px;
+	margin-top: 0px;
+	position: relative;
+	top: 0px;
+}
+
+button.ui-datepicker-trigger {
+	width: 25px;
+	height: 25px;
+	margin-top: 0px;
+	position: relative;
+	top: 0px;
+	border-radius: 0px 4px 4px 0px !important;
+}
+
+.hasDatepicker {
+	border-radius: 4px 0px 0px 4px !important;
+}
+
+table.ui-selectoneradio {
+	height: 25px;
+	/*  background: #FFFFFF; */
+	/*  border: 1px solid #CCCCCC; */
+	/*  box-shadow: 0 2px 2px #8F8F8F inset; */
+	/*  border-radius: 4px 4px 4px 4px; */
+}
+
+table.ui-selectoneradio tbody tr td {
+	display: inline-block;
+	vertical-align: text-top;
+	/*font-weight: bold;*/
+	padding-left: 11px;
+}
+
+button.ui-button-text-only {
+	margin-right: 0;
+}
+
+div.ui-fieldset-content div:first-child {
+	margin-right: 0.73%;
+}
+
+div.ui-fieldset-content div.col5:first-child {
+	margin-right: 0.5%;
+}
+
+fieldset>div.ui-fieldset-content {
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+}
+
+.w1, .w2, .w3, .w4, .w5, .w6, .w7, .w8, .w9, .w10, input, label[class^="w"]
+	{
+	/*vertical-align: bottom;
+	display: inline-block;*/
+	position: relative;
+	margin-bottom: 5px;
+	border-collapse: separate;
+	border-spacing: 2;
+	box-sizing: border-box;
+	-moz-box-sizing: padding-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	
+	/*
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 1%;
+	margin-right: 1%;*/
+}
+
+.col6, .col5, .col4 {
+	display: inline-table;
+	position: relative;
+}
+
+.col6 {
+	width: 67.3%
+}
+
+.col5 {
+	width: 48.3%
+}
+
+.col4 {
+	width: 31.4%
+}
+
+.w1 {
+	width: 10%
+}
+
+.w2 {
+	width: 20%
+}
+
+.w3 {
+	width: 30%
+}
+
+.w4 {
+	width: 40%
+}
+
+.w5 {
+	width: 50%
+}
+
+.w6 {
+	width: 60%
+}
+
+.w7 {
+	width: 70%
+}
+
+.w8 {
+	width: 80%
+}
+
+.w9 {
+	width: 90%
+}
+
+.w10 {
+	width: 100%
+}
+
+span.both.w1>input.hasDatepicker {
+	width: 67%;
+}
+
+span.both.w2>input.hasDatepicker {
+	width: 83%;
+}
+
+span.both.w3>input.hasDatepicker {
+	width: 89%;
+}
+
+span.both.w4>input.hasDatepicker {
+	width: 91.5%;
+}
+
+span.both.w5>input.hasDatepicker {
+	width: 93.3%;
+}
+
+span.both.w6>input.hasDatepicker {
+	width: 94.5%;
+}
+
+span.both.w7>input.hasDatepicker {
+	width: 95.2%;
+}
+
+span.both.w8>input.hasDatepicker {
+	width: 95.8%;
+}
+
+span.both.w9>input.hasDatepicker {
+	width: 96.3%;
+}
+
+span.both.w10>input.hasDatepicker {
+	width: 96.7%;
+}
+
+.col4 span.both.w1>input.hasDatepicker {
+	width: 0%;
+}
+
+.col4 span.both.w2>input.hasDatepicker {
+	width: 46%;
+}
+
+.col4 span.both.w3>input.hasDatepicker {
+	width: 64%;
+}
+
+.col4 span.both.w4>input.hasDatepicker {
+	width: 73.5%;
+}
+
+.col4 span.both.w5>input.hasDatepicker {
+	width: 78.3%;
+}
+
+.col4 span.both.w6>input.hasDatepicker {
+	width: 81.5%;
+}
+
+.col4 span.both.w7>input.hasDatepicker {
+	width: 84.2%;
+}
+
+.col4 span.both.w8>input.hasDatepicker {
+	width: 86.8%;
+}
+
+.col4 span.both.w9>input.hasDatepicker {
+	width: 88.3%;
+}
+
+.col4 span.both.w10>input.hasDatepicker {
+	width: 89.7%;
+}
+
+.col5 span.both.w1>input.hasDatepicker {
+	width: 30%;
+}
+
+.col5 span.both.w2>input.hasDatepicker {
+	width: 65%;
+}
+
+.col5 span.both.w3>input.hasDatepicker {
+	width: 77%;
+}
+
+.col5 span.both.w4>input.hasDatepicker {
+	width: 82.5%;
+}
+
+.col5 span.both.w5>input.hasDatepicker {
+	width: 86.3%;
+}
+
+.col5 span.both.w6>input.hasDatepicker {
+	width: 88.5%;
+}
+
+.col5 span.both.w7>input.hasDatepicker {
+	width: 90.2%;
+}
+
+.col5 span.both.w8>input.hasDatepicker {
+	width: 91.2%;
+}
+
+.col5 span.both.w9>input.hasDatepicker {
+	width: 92.3%;
+}
+
+.col5 span.both.w10>input.hasDatepicker {
+	width: 93%;
+}
+
+.col6 span.both.w1>input.hasDatepicker {
+	width: 48%;
+}
+
+.col6 span.both.w2>input.hasDatepicker {
+	width: 74%;
+}
+
+.col6 span.both.w3>input.hasDatepicker {
+	width: 83%;
+}
+
+.col6 span.both.w4>input.hasDatepicker {
+	width: 86.6%;
+}
+
+.col6 span.both.w5>input.hasDatepicker {
+	width: 89.6%;
+}
+
+.col6 span.both.w6>input.hasDatepicker {
+	width: 91.5%;
+}
+
+.col6 span.both.w7>input.hasDatepicker {
+	width: 92.7%;
+}
+
+.col6 span.both.w8>input.hasDatepicker {
+	width: 93.6%;
+}
+
+.col6 span.both.w9>input.hasDatepicker {
+	width: 94.3%;
+}
+
+.col6 span.both.w10>input.hasDatepicker {
+	width: 94.9%;
+}
+
+.r1 {
+	left: 10%
+}
+
+.r2 {
+	left: 20%
+}
+
+.r3 {
+	left: 30%
+}
+
+.r4 {
+	left: 40%
+}
+
+.r5 {
+	left: 50%
+}
+
+.r6 {
+	left: 60%
+}
+
+.r7 {
+	left: 70%
+}
+
+.r8 {
+	left: 80%
+}
+
+.r9 {
+	left: 90%
+}
+
+.r10 {
+	left: 100%
+}
+
+[class*="span"] {
+	float: left;
+	margin-left: 20px;
+}
+
+.clear {
+	margin-left: -20px;
+	*zoom: 1;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+}
+
+.clear:after {
+	clear: both;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.columnRight label {
+	text-align: right;
+	/*font-weight: bold !important;*/
+	float: right !important;
+}
+
+.ui-selectonemenu label {
+	float: left !important;
+	font-weight: normal !important;
+	text-align: left;
+}
+
+/** Adicionado para resolver o alinhamento dos campos no visualizar*/
+.clearfix label {
+	float: left;
+}
+
+.columnLeft {
+	text-align: left;
+	font-weight: none !important;
+}
+
+.columnShow td {
+	font-weight: normal;
+	text-align: left;
+}
+
+.columnShow label {
+	text-align: right;
+	font-weight: bold !important;
+	float: right;
+}
+
+.noBorders tr, .noBorders td {
+	background: none !important;
+	border: none !important;
+}
+
+.ui-autocomplete .ui-icon-triangle-1-s {
+	background-position: -160px -112px;
+	!
+	important
+}
+
+.ui-icon-bullet {
+	background-position: -82px -146px;
+}
+
+.ui-radiobutton {
+	line-height: 16px;
+	margin: 3px 0;
+	position: relative;
+	width: 4px;
+}
+
+.ui-radiobutton .ui-radiobutton-box {
+	border-radius: 10px 10px 10px 10px;
+	bottom: 0;
+	height: 13px;
+	left: 0;
+	line-height: 16px;
+	position: relative;
+	width: 13px;
+}
+
+/* Não estava implementado o padrão para combobox¹
+
+label do combobox em negrito
+
+@author   */
+.ui-chkbox .ui-chkbox-label { /*font-weight: bold !important;*/
+	
+}
+
+/* Não estava implementado o padrão para combobox²
+
+distancia do topo de 5px
+
+@author   */
+.ui-chkbox {
+	padding-top: 5px;
+}
+
+.dataPicker {
+	margin-right: 100%;
+}
+
+.ui-paginator>* {
+	float: left
+}
+
+.ui-autocomplete.state {
+	margin-left: -10px; ! important;
+	margin-right: -2px;
+	!
+	important;
+}
+
+.stateP {
+	margin-left: -40px;
+	!
+	important;
+}
+
+.required {
+	text-align: right !important;
+	color: red !important;
+}
+
+.panel {
+	margin-bottom: 1em;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.fill-all-width {
+	width: 100%;
+}
+
+.fill-almost-all-width, .fill-almost-all-width input {
+	width: 90%;
+}
+
+.ui-panelmenu .ui-panelmenu-header a {
+	display: block;
+	font-size: 0.89em;
+	padding: 0.5em 0.5em 0.5em 2.2em;
+}
+
+.user {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-right: -2px;
+	border-radius: 4px 4px 0px 4px !important;
+}
+
+.user:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.logout {
+	border-radius: 0px 4px 4px 4px !important;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.logout:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.ui-menu {
+	width: 104px;
+}
+
+input::-webkit-input-placeholder {
+	color: #A9A9A9 !important;
+}
+
+input:-moz-placeholder {
+	color: #A9A9A9 !important;
+}
+
+input:-ms-input-placeholder {
+	color: #A9A9A9 !important;
+}
+
+.menu-icon-search {
+	position: absolute !important;
+	top: 5px !important;
+	float: left !important;
+}
+
+.div-menu-search {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menuContent .ui-layout-unit-content {
+	overflow: hidden !important;
+}
+
+.menuInputText {
+	text-indent: 10px;
+}
+
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8,
+	.grid_9, .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15,
+	.grid_16, .grid_17, .grid_18, .grid_19, .grid_20, .grid_21, .grid_22,
+	.grid_23, .grid_24 {
+	margin-bottom: 5px !important;
+}
+
+.grid_1>label, .grid_2>label, .grid_3>label, .grid_4>label, .grid_5>label,
+	.grid_6>label, .grid_7>label, .grid_8>label, .grid_9>label, .grid_10>label,
+	.grid_11>label, .grid_12>label, .grid_13>label, .grid_14>label,
+	.grid_15>label, .grid_16>label, .grid_17>label, .grid_18>label,
+	.grid_19>label, .grid_20>label, .grid_21>label, .grid_22>label,
+	.grid_23>label, .grid_24>label {
+	padding-top: 5px;
+}
+
+.ui-outputlabel.ui-state-error {
+	background: transparent;
+	color: #B81900
+}
+
+.buttonsAction {
+	vertical-align: bottom;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 5px;
+	border-collapse: separate;
+	border-spacing: 2;
+	box-sizing: border-box;
+	-moz-box-sizing: padding-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box
+}
+
+/* O tamanho do botão não de ser 120,  pois não
+da certo com o botão limpar que é muito grande.
+Fora do padrão!
+
+@author   */
+.buttonsAction button {
+	margin: 5px 5px 5px 5px;
+}
+
+/* Foi adicionado o estilo para botões com a
+funcionalidade de Adicionar itens em uma tabela
+
+@author   */
+.buttonsAddAction {
+	text-align: center !important;
+	margin: 20px 0 !important;
+}
+
+.buttonsAddAction button {
+	margin: 0px 5px 5px 5px;
+}
+
+.ui-datatable-data .ui-state-highlight {
+	/* background:  -moz-linear-gradient(top, #f2cf98 1%, #efc683 100%) !important; */
+	background: #F6AF3A !important;
+}
+
+.ui-datatable, .ui-datatable-even {
+	background: #FFF0A5;
+	background: -moz-linear-gradient(top, #FDF9E1, #FFF0A5) repeat-X scroll
+		50% 50% #FDF9E1;
+}
+
+.ui-outputlabel-rfi {
+	color: #ff0000 !important;
+}
+
+.ui-panel {
+	margin-bottom: 5px;
+}
+
+/* Espaçamento dos botões de exportar PDF e XLS */
+.reportButton {
+	padding: 1px 0px !important;
+}
+
+/* Coluna de opções */
+.buttonsOptions {
+	width: 120px;
+	text-align: center;
+}
+
+/* Antigo style.css*/
+.font_bold {
+	font-weight: bold;
+}
+
+.image-upload.label {
+	font-size: 16px;
+}
+
+.image-upload .fileupload-content {
+	display: none;
+}
+
+.image-upload .fileupload-buttonbar {
+	border: none;
+	background: none;
+	font-size: 13.2px;
+}
+
+.panel-upload {
+	height: 250px;
+	margin-top: -5px;
+	margin-right: 0px;
+	box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.8);
+	text-align: center;
+}
+
+.ui-wizard-step-title {
+	font-size: 12px;
+}
+
+/*  Remover as bordas dos paineis, retirando as linhas que ficavam entre as sections */
+.ui-layout-unit {
+	border: 0px solid #DDDDDD !important;
+}
+
+/* ajustar largura do menu */
+.ui-layout-pane-west {
+	width: 220px !important;
+}
+
+/* ajustar botão de esconder menu */
+.ui-layout-resizer-west-open {
+	left: 234px !important;
+}
+
+/*
+Alinhamento do titulo da tabela de resultados(Tela de Consultar)
+
+@autor 
+*/
+th.ui-datatable-header span {
+	float: left;
+}
+
+/* Definições para ajustas o painel de notificação que irá conter o nome da tela */
+.ui-notificationbar {
+	width: 100%;
+	height: 0px !important;
+	font-size: 30px;
+	background: transparent;
+	text-align: center;
+	border: none;
+	/*font-weight: bold;*/
+	color: #1C94C4;
+	font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+/*
+Remoção dos botões do componente de upload
+
+@autor maycon francis
+*/
+.uploadFile .fileupload-buttonbar {
+	padding: 0px 0px !important;
+	border: none;
+}
+
+.fileupload-buttonbar {
+	font-size: 11px;
+	width: 78%;
+}
+
+.uploadFile table {
+	display: none !important;
+}
+
+.uploadFile .fileupload-content {
+	display: none !important;
+}
+
+.preview {
+	display: none !important;
+}
+
+.ui-selectonemenu {
+	display: inline;
+	float: right;
+	position: relative;
+	margin-left: 5%;
+	margin-right: -1%;
+}
+
+.borda-painel-ativo {
+	border: 1px solid #DDDDDD !important;
+}
+
+.ui-radiobutton {
+	width: 17px !important;
+}
+
+.spaceradio {
+	padding-left: 16%;
+}
+
+.ui-inputtextDescricao {
+	width: 224px !important;
+}
+
+.ui-inputtextSituacao {
+	margin-left: 9px !important;
+}
+
+.ui-inputtextSituacao {
+	width: 157px !important;
+}
+
+table.ui-picklist {
+	width: 100% !important;
+}
+
+table.ui-picklist button {
+	margin: 0 auto;
+}
+
+table.ui-picklist tr:first-child td:first-child, table.ui-picklist tr:first-child td:last-child
+	{
+	width: 45%;
+	text-align: left;
+}
+
+.ui-picklist-filter {
+	width: 100% !important;
+}
+
+table.ui-picklist ul.ui-picklist-list {
+	width: 100% !important;
+	height: 250px;
+}
+
+.ui-picklist-list li {
+	padding: 7px 2px !important;
+	border-bottom: 1px solid #DDD !important
+}
+
+.hide-column-names table thead tr {
+	display: none;
+}
