@@ -54,7 +54,7 @@ public class UserController extends BaseController {
 	public void save() {
 
 		boolean possuiResponsavel = responsavel != null
-				&& responsavel.getId() > 0;
+				&& responsavel.getId() != null && responsavel.getId() > 0;
 
 		List<Role> roles = new ArrayList<Role>();
 		roles.add(role);
