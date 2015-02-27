@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PrestacaoContas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="483"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="valor" class="java.lang.String"/>
+	<parameter name="dataPrestacao" class="java.lang.String"/>
+	<parameter name="agencia" class="java.lang.String"/>
+	<parameter name="conta" class="java.lang.String"/>
+	<parameter name="local" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="769" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="769"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="12" y="76" width="532" height="242"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" rotation="None" markup="html">
+					<font fontName="SansSerif" size="11" isBold="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Declaro que prestei contas do valor " +$P{valor}+" referente ao repasse recebido em "+$P{dataPrestacao}+" no valor "+$P{valor}+" ficando com um saldo disponível na minha conta bancária agência "+$P{agencia}+" conta nº "+$P{conta}+" de "+$P{valor}+" e que os documentos comprobatórios das despesas encontram-se nesta unidade beneficiária sob minha boa guarda e organização, os quais serão conservados por cinco anos conforme determina a Lei 2.928/2014 art.5º, bem como ficarão disponível para efeito de acompanhamento, fiscalização e auditorias internas e externas conforme art.7º, c.<p/><p>Declaro também está ciente conforme determina o artigo 4º § 2º que o gestor, responsável pela prestação de contas, que permitir, inserir ou fizer inserir documentos ou declaração falsa ou diversa da que deveria ser inscrita, com o fim de alterar a verdade sobre os fatos, será responsabilizado na forma da lei.</p>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="36" width="555" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Declaração de Prestação de Contas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="119" y="401" width="300" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="340" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{local}+",___/___/_______"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="119" y="402" width="300" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Assinatura do Responsável]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

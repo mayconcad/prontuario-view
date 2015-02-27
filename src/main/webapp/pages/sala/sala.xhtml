@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:outputScript name="utils.js" library="javascript" />
+<div class="selectedMenu">
+	<span class="headerTitle">Sala</span>
+</div>
+<p:tabView id="salaTabView" widgetVar="salaTabs">
+	<p:ajax event="tabClose" process="@all" />
+	<p:ajax event="tabChange" process="@all" />
+
+	<p:tab id="createTab" title="Cadastrar">
+		<ui:include src="criarSala.xhtml" />
+	</p:tab>
+	<p:tab id="findTab" title="#{wd['tab.search']}"
+		binding="#{buscarSalaController.findTab}">
+		<ui:include src="buscarSala.xhtml" />
+	</p:tab>
+	<p:tab id="editTab" title="#{wd['tab.update']}" rendered="false"
+		binding="#{buscarSalaController.editTab}" closable="true">
+		<ui:include src="editarSala.xhtml" />
+	</p:tab>
+</p:tabView>
+</html>

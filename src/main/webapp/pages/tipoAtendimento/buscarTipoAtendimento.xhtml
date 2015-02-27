@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<div class="container">
+	<h:form id="buscarTipoAtendimentoForm" prependId="false">
+		<p:messages id="messages" />
+		<p:confirmDialog message="#{wd['dialog.deleteConfirmation.message']}"
+			header="#{wd['dialog.alert.header']}"
+			severity="alert" widgetVar="confirmation"
+			global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton id="btnSim" value="#{wd['dialog.optionYes']}"
+				oncomplete="PF('confirmation').hide();" styleClass="r6"
+				action="#{buscarTipoAtendimentoController.remover}" process="@this"
+				update=":tipoAtendimentoTabView:buscarTipoAtendimentoForm" />
+			<p:commandButton id="btnNao" value="#{wd['dialog.optionNo']}"
+				onclick="PF('confirmation').hide();" type="button" styleClass="r7" />
+		</p:confirmDialog>
+
+		<f:validateBean disabled="true">
+			<p:panel header="#{wd['fieldset.filters']}" id="findPanel">
+				<div class="row">
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['tipoAtendimento.descricao']}" for="buscarNome" />
+					</div>
+					<div class="col-md-16">
+						<p:inputText id="buscarNome" widgetVar="buscarNome" alt="nome"
+							value="#{buscarTipoAtendimentoController.tipoAtendimentoBusca.descricao}" />
+					</div>	
+				
+						
+				</div>
+				<div class="clear" />
+			</p:panel>
+	  </f:validateBean>
+
+		<p:commandButton value="#{wd['button.search']}" process="@this findPanel"
+			styleClass="col-md-4 r8"
+			action="#{buscarTipoAtendimentoController.buscar}"
+			update="buscarTipoAtendimentoTable" icon="ui-icon-search">
+		</p:commandButton>
+		<div class="clear" />
+		<fieldset>
+			<legend>Resultados</legend>
+			<p:dataTable value="#{buscarTipoAtendimentoController.tipoAtendimentos}"
+				currentPageReportTemplate="{currentPage} de {totalPages}"
+				emptyMessage="#{wd['item.emptyFind']}" var="tipoAtendimento"
+				id="buscarTipoAtendimentoTable" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+				<p:column headerText="#{wd['table.columns.options']}"
+					style="width:50px; text-align: center;">
+					<p:commandButton icon="ui-icon-trash" onclick="PF('confirmation').show()"
+						styleClass="icon"
+						title="#{wd['table.columns.options.delete.hint']}">
+						<f:setPropertyActionListener
+							target="#{buscarTipoAtendimentoController.tipoAtendimentoRemove}"
+							value="#{tipoAtendimento}" />
+					</p:commandButton>
+					<p:commandButton icon="ui-icon-pencil" styleClass="icon"
+						action="#{buscarTipoAtendimentoController.carregar}" process="@form"  update=":tipoAtendimentoTabView"
+						title="#{wd['table.columns.options.edit.hint']}">
+						<f:setPropertyActionListener
+							target="#{buscarTipoAtendimentoController.tipoAtendimentoEdite}"
+							value="#{tipoAtendimento}" />
+					</p:commandButton>
+				</p:column>
+
+				<p:column headerText="#{lb['tipoAtendimento.descricao']}"
+					style="width: 250px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{tipoAtendimento.descricao}" style="font-weight:100" />
+				</p:column>
+				
+			</p:dataTable>
+		</fieldset>
+	</h:form>
+</div>
+</html>

@@ -53,15 +53,15 @@
 					converter="autocompleteConverter" var="var" itemLabel="#{var.name}"
 					itemValue="#{var}" dropdown="true" required="true"
 					scrollHeight="250">
-					<p:ajax event="itemSelect" process="@this" />
+					<p:ajax event="itemSelect" process="@this" disabled="#{loginController.principalRole eq 'ADMIN' ? false : true}"/>
 					<f:attribute name="entityClass"
-						value="br.com.sts.ddum.domain.springsecurity.entities.Role" />
+						value="br.com.saude.prontuario.model.springsecurity.entities.Role" />
 				</p:autoComplete>
 			</div>
 			<div class="clear" />
 			<p:commandButton value="#{wd['button.update']}" update=":usuarioTabView, messages"
 				actionListener="#{buscarUserController.editar}" styleClass="w4 r7"
-				process="@form" />
+				process="@form" icon="ui-icon-disk"/>
 			<p:commandButton value="#{wd['button.cancel']}" type="reset"
 				icon="ui-icon-cancel"
 				onclick="usuarioTabs.remove(usuarioTabs.getActiveIndex())"

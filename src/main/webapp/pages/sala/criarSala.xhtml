@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="container">
+	<h:form id="createSalaForm">
+		<p:messages id="messages" />
+
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix" id="dataPanel">
+			<p:focus context="dataPanel" />
+
+
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['sala.descricao']}" for="salaManual" />
+				</div>
+				<div class="col-md-16">
+					<p:inputText value="#{salaController.sala.descricao}"
+						id="salaManual" />
+				</div>
+			</div>
+
+			<div class="clear" />
+			<p:commandButton value="#{wd['button.create']}" update="@form"
+				actionListener="#{salaController.save}"
+				styleClass="col-md-4 r6" icon="ui-icon-disk" />
+			<p:commandButton id="limparCommandButton"
+				value="#{wd['button.clean']}" icon="ui-icon-arrowrefresh-1-w"
+				actionListener="#{salaController.init}" update="@form"
+				process="@this" styleClass="col-md-4 r7">
+			</p:commandButton>
+		</p:panel>
+	</h:form>
+</div>
+</html>

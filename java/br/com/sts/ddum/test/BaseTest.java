@@ -1,12 +1,12 @@
-package br.com.sts.ddum.test;
+package br.com.saude.prontuario.test;
 
 import javax.inject.Inject;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.sts.ddum.domain.entities.UserSystem;
-import br.com.sts.ddum.domain.repository.interfaces.UserRepository;
+import br.com.saude.prontuario.model.entities.UserSystem;
+import br.com.saude.prontuario.model.repository.interfaces.UserRepository;
 
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 @Transactional

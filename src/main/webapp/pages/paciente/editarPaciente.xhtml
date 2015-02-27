@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<div class="container">
+	<h:form id="updatePacienteForm">
+		<p:messages id="messages" />
+
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix">
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['paciente.nome']}"
+						for="pacienteAC" />
+				</div>
+				<div class="col-md-12">
+					<p:inputText
+						value="#{buscarPacienteController.pacienteEdite.nome}"
+						 id="pacienteAC" />
+				</div>
+				<div class="col-md-4">
+					<p:outputLabel value="Data Nascimento" for="dataF" />
+				</div>
+				<div class="col-md-2">
+					<p:calendar id="dataF"
+						value="#{buscarPacienteController.pacienteEdite.dataNascimento}"
+						pattern="dd/MM/yyyy" locale="pt" styleClass="fieldFullWidth"
+						navigator="true" effect="fadeIn" showOn="button" />
+				</div>
+				<!-- 			<div class="grid_15"> -->
+				<!-- 				<p:autoComplete id="pacienteAC" minQueryLength="3" -->
+				<!-- 					value="#{buscarPacienteController.pacienteEdite}" -->
+				<!-- 					label="#{lb['paciente.nome']}" required="true" -->
+				<!-- 					completeMethod="#{pacienteController.autocompletarBDFolha}" -->
+				<!-- 					queryDelay="3" widgetVar="pacienteAC" var="var" -->
+				<!-- 					itemLabel="#{var.nome}" itemValue="#{var}" process="@this" -->
+				<!-- 					dropdown="true" converter="pacienteConverter" -->
+				<!-- 					forceSelection="true" scrollHeight="250"> -->
+				<!-- 					<p:ajax event="itemSelect" process="@this" update="@form" /> -->
+				<!-- 				</p:autoComplete> -->
+				<!-- 			</div> -->
+<!-- 				<div class="col-md-2"> -->
+<!-- 					<p:outputLabel value="#{lb['paciente.cpf']}" -->
+<!-- 						for="respMatriFunc" /> -->
+<!-- 				</div> -->
+<!-- 				<div class="col-md-4"> -->
+<!-- 					<p:inputText id="respMatriFunc" -->
+<!-- 						value="#{buscarPacienteController.pacienteEdite.cpf}" -->
+<!-- 						required="true" /> -->
+<!-- 				</div> -->
+			
+<!-- 				<div class="col-md-2"> -->
+<!-- 					<p:outputLabel value="#{lb['paciente.rg']}" for="respRG" /> -->
+<!-- 				</div> -->
+<!-- 				<div class="col-md-3"> -->
+<!-- 					<p:inputText id="respRG" -->
+<!-- 						value="#{buscarPacienteController.pacienteEdite.rg}" -->
+<!-- 						required="true" /> -->
+<!-- 				</div>				 -->
+			</div>			
+			<div class="clear" />
+			<fieldset>
+				<legend>Endereço</legend>
+				<div class="row">
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['paciente.endereco']}"
+							for="pacienteEndereco" />
+					</div>
+					<div class="col-md-11">
+						<p:inputText id="pacienteEndereco"
+							value="#{buscarPacienteController.pacienteEdite.endereco}" />
+					</div>
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['paciente.bairro']}"
+							for="pacienteBairro" />
+					</div>
+					<div class="col-md-9">
+						<p:inputText id="pacienteBairro"
+							value="#{buscarPacienteController.pacienteEdite.bairro}" />
+					</div>
+				</div>
+				<div class="clear" />
+				<div class="row">
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['paciente.cidade']}"
+							for="pacienteCidade" />
+					</div>
+					<div class="col-md-13">
+						<p:inputText id="pacienteCidade"
+							value="#{buscarPacienteController.pacienteEdite.cidade}" />
+					</div>
+					<div class="col-md-1">
+						<p:outputLabel value="#{lb['paciente.uf']}" for="pacienteUf" />
+					</div>
+					<div class="col-md-2">
+						<p:inputText id="pacienteUf"
+							value="#{buscarPacienteController.pacienteEdite.uf}" />
+					</div>
+					<div class="col-md-2">
+
+						<p:outputLabel value="#{lb['paciente.fone']}"
+							for="pacienteTelefone" />
+					</div>
+					<div class="col-md-4">
+						<p:inputMask id="pacienteTelefone"
+							value="#{buscarPacienteController.pacienteEdite.fone}"
+							mask="(999)99999-9999" />
+					</div>
+				</div>
+			</fieldset>
+
+			<p:commandButton value="#{wd['button.update']}"
+				update=":pacienteTabView, messages"
+				actionListener="#{buscarPacienteController.editar}"
+				styleClass="w4 r6" icon="ui-icon-disk" />
+			<!-- 		<p:commandButton id="limparCommandButton" -->
+			<!-- 			value="#{wd['button.cancel']}" icon="ui-icon-cancel" -->
+			<!-- 			actionListener="#{buscarPacienteController.init}" update="@form" -->
+			<!-- 			process="@this" styleClass="w4 r7"> -->
+			<!-- 				<p:resetInput target=":pacienteTabView:updatePacienteForm" /> -->
+			<!-- 		</p:commandButton> -->
+
+			<!-- 			<div class="buttonsAction"> -->
+			<!-- 				<p:commandButton id="salvarCommandButton" icon="ui-icon-disk" value="#{wds['button.update']}" -->
+			<!-- 					update="@form" action="#{controladorConsultarAtivo.salvar}" -->
+			<!-- 					process="@this :#{p:component('dadosAtualizarPanel')} :#{p:component('propriedadesAtualizarPanel')} :#{p:component('medidoresAtualizarDataTable')} :#{p:component('patrimonioAtualizarPanel')}" -->
+			<!-- 					onclick="javascript:window.location='#ativoTabView'" /> -->
+			<p:commandButton value="#{wd['button.cancel']}" type="reset"
+				icon="ui-icon-cancel"
+				onclick="pacienteTabs.remove(pacienteTabs.getActiveIndex())"
+				styleClass="w4 r8" />
+			<!-- 			</div> -->
+
+		</p:panel>
+
+	</h:form>
+</div>
+</html>

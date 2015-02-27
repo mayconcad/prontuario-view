@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<div class="container">
+	<h:form id="buscarPacienteForm" prependId="false">
+		<p:messages id="messages" />
+		<p:confirmDialog message="#{wd['dialog.deleteConfirmation.message']}"
+			header="#{wd['dialog.alert.header']}"
+			severity="alert" widgetVar="confirmation"
+			global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton id="btnSim" value="#{wd['dialog.optionYes']}"
+				oncomplete="PF('confirmation').hide()" styleClass="r6"
+				action="#{buscarPacienteController.remover}" process="@this"
+				update=":pacienteTabView:buscarPacienteForm:buscarPacienteTable" />
+			<p:commandButton id="btnNao" value="#{wd['dialog.optionNo']}"
+				onclick="PF('confirmation').hide()" type="button" styleClass="r7" />
+		</p:confirmDialog>
+
+		<f:validateBean disabled="true">
+			<p:panel header="#{wd['fieldset.filters']}" id="findPanel">
+				<div class="row">
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['paciente.nome']}" for="buscarNome" />
+					</div>
+					<div class="col-md-16">
+						<p:inputText id="buscarNome" widgetVar="buscarNome" alt="nome"
+							value="#{buscarPacienteController.pacienteBusca.nome}" />
+					</div>					
+				
+<!-- 					<div class="col-md-1"> -->
+<!-- 						<p:outputLabel value="#{lb['paciente.cpf']}" for="respCPF" /> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6"> -->
+<!-- 						<p:inputText id="respCPF" widgetVar="respCPF" alt="cpf" -->
+<!-- 							value="#{buscarPacienteController.pacienteBusca.cpf}" /> -->
+<!-- 					</div>					 -->
+				</div>
+				<div class="clear" />
+			</p:panel>
+	  </f:validateBean>
+
+		<p:commandButton value="#{wd['button.search']}" process="@this findPanel"
+			styleClass="col-md-4 r8"
+			action="#{buscarPacienteController.buscar}"
+			update=":pacienteTabView:buscarPacienteForm:buscarPacienteTable" icon="ui-icon-search">
+		</p:commandButton>
+		<div class="clear" />
+		<fieldset>
+			<legend>Resultados</legend>
+			<p:dataTable value="#{buscarPacienteController.pacientes}"
+				currentPageReportTemplate="{currentPage} de {totalPages}"
+				emptyMessage="#{wd['item.emptyFind']}" var="paciente"
+				id="buscarPacienteTable" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+				<p:column headerText="#{wd['table.columns.options']}"
+					style="width:50px; text-align: center;">
+					<p:commandButton icon="ui-icon-trash" onclick="PF('confirmation').show()"
+						styleClass="icon"
+						title="#{wd['table.columns.options.delete.hint']}" >
+						<f:setPropertyActionListener
+							target="#{buscarPacienteController.pacienteRemove}"
+							value="#{paciente}" />
+					</p:commandButton>
+					<p:commandButton icon="ui-icon-pencil" styleClass="icon"
+						action="#{buscarPacienteController.carregar}" process="@form"
+						title="#{wd['table.columns.options.edit.hint']}" update=":pacienteTabView">
+						<f:setPropertyActionListener
+							target="#{buscarPacienteController.pacienteEdite}"
+							value="#{paciente}" />
+					</p:commandButton>
+				</p:column>
+
+				<p:column headerText="#{lb['paciente.nome']}"
+					style="width: 250px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{paciente.nome}" style="font-weight:100" />
+				</p:column>
+				<p:column headerText="#{lb['paciente.dataNascimento']}"
+					style="width: 250px; text-align: center; white-space:normal !important;">
+					<p:calendar pattern="dd/MM/yyyy" locale="pt" readonly="true" value="#{paciente.dataNascimento}" style="font-weight:100"  showOn="false"/>
+				</p:column>
+<!-- 				<p:column headerText="#{lb['paciente.cpf']}" -->
+<!-- 					style="width: 100px; text-align: center; white-space:normal !important;"> -->
+<!-- 					<h:outputText value="#{paciente.cpf}" -->
+<!-- 						style="font-weight:100" /> -->
+<!-- 				</p:column> -->
+<!-- 				<p:column headerText="#{lb['paciente.rg']}" -->
+<!-- 					style="width: 100px; text-align: center; white-space:normal !important;"> -->
+<!-- 					<h:outputText value="#{paciente.rg}" style="font-weight:100" /> -->
+<!-- 				</p:column>				 -->
+				<p:column headerText="#{lb['paciente.fone']}"
+					style="width: 200px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{paciente.fone}" style="font-weight:100" />
+				</p:column>
+			</p:dataTable>
+		</fieldset>
+	</h:form>
+</div>
+</html>

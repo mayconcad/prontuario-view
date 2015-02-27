@@ -150,9 +150,15 @@ span.headerTitle {
 }
 
 label.ui-outputlabel {
-	text-align: right;
-	padding-right: 10px;
-	padding-bottom: 2px;
+/* 	text-align: left; */
+/* 	padding-right: 5px; */
+/* 	padding-bottom: 2px; */
+/* 		margin-top: 5px; */
+/* 	vertical-align: bottom !important; */
+}
+
+.ui-selectonemenu label.ui-selectonemenu-label{
+	text-align: left;
 }
 
 button.icon {
@@ -160,8 +166,12 @@ button.icon {
 	width: 18px;
 }
 
-input.ui-inputfield {
-	margin-top: 5px;
+/* input.ui-inputfield { */
+/* 	margin-top: 5px; */
+/* } */
+
+span.ui-autocomplete {
+	width: 100%;
 }
 
 span.ui-autocomplete>input.ui-autocomplete-input {
@@ -181,7 +191,8 @@ span.ui-autocomplete>button.ui-button-icon-only, span[class^="w"]>button.ui-butt
 	min-width: 20px;
 	margin-top: 0px;
 	position: relative;
-	right: -2px;
+	/*maycon */
+/* 	right: -2px; */
 	top: 0px;
 }
 
@@ -197,6 +208,10 @@ div.ui-radiobutton.ui-widget {
 
 td>label {
 	margin-right: 10px;
+	/* maycon */
+/* 	padding-right: 10px; */
+/* 	vertical-align: bottom !important; */
+	
 }
 
 table.ui-selectoneradio tbody tr td {
@@ -536,15 +551,11 @@ span[class^="w"]>input.hasDatepicker {
 .columnRight {
 	text-align: right;
 	font-weight: bold;
-	!
-	important
 }
 
 .columnLeft {
 	text-align: left;
 	font-weight: bold;
-	!
-	important
 }
 
 .columnShow td {
@@ -555,8 +566,6 @@ span[class^="w"]>input.hasDatepicker {
 .columnShow label {
 	text-align: right;
 	font-weight: bold;
-	!
-	important
 }
 
 .noBorders tr, .noBorders td {
@@ -604,10 +613,8 @@ span[class^="w"]>input.hasDatepicker {
 }
 
 .required {
-	text-align: right; ! important;
+	text-align: right ! important;
 	color: red;
-	!
-	important
 }
 
 .panel {
@@ -658,7 +665,7 @@ span[class^="w"]>input.hasDatepicker {
 
 .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield
 	{
-	/* 	box-shadow: none !important; */
+/* 		box-shadow: none !important; */
 	
 }
 
@@ -711,6 +718,7 @@ Remoção dos botões do componente de upload
 }
 .ui-outputlabel-rfi {
 	color: #ff0000 !important;
+/* 	padding-right:1px; */
 }
 
 /* Foi adicionado o estilo para botões com a
@@ -724,4 +732,19 @@ funcionalidade de Adicionar itens em uma tabela
 
 .buttonsAddAction button {
 	margin: 0px 5px 5px 5px;
+}
+
+/* span.ui-autocomplete > button.ui-button-icon-only, span[class^="w"] > button.ui-button-icon-only{ */
+/* 	max-width:none !important;	 */
+/* 	right: 0px !important; */
+/* } */
+
+.ui-menu{
+	padding: 0em !important;
+}
+/* .ui-panelmenu-header{ */
+/* 	font-size: 1em; */
+/* } */
+.ui-selectonemenu .ui-selectonemenu-trigger{
+	width: 25px !important;
 }

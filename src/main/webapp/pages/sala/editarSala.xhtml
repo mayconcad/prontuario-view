@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<div class="container">
+	<h:form id="updateSalaForm">
+		<p:messages id="messages" />
+
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix">
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['sala.descricao']}" for="salaAC" />
+				</div>
+				<div class="col-md-16">
+					<p:inputText value="#{buscarSalaController.salaEdite.descricao}"
+						for="salaAC" id="salaAC" />
+				</div>
+			</div>
+	<div class="clear" />
+			<p:commandButton value="#{wd['button.update']}"
+				update=":salaTabView, messages"
+				actionListener="#{buscarSalaController.editar}"
+				styleClass="w4 r6" icon="ui-icon-disk" />
+			<!-- 		<p:commandButton id="limparCommandButton" -->
+			<!-- 			value="#{wd['button.cancel']}" icon="ui-icon-cancel" -->
+			<!-- 			actionListener="#{buscarSalaController.init}" update="@form" -->
+			<!-- 			process="@this" styleClass="w4 r7"> -->
+			<!-- 				<p:resetInput target=":salaTabView:updateSalaForm" /> -->
+			<!-- 		</p:commandButton> -->
+
+			<!-- 			<div class="buttonsAction"> -->
+			<!-- 				<p:commandButton id="salvarCommandButton" icon="ui-icon-disk" value="#{wds['button.update']}" -->
+			<!-- 					update="@form" action="#{controladorConsultarAtivo.salvar}" -->
+			<!-- 					process="@this :#{p:component('dadosAtualizarPanel')} :#{p:component('propriedadesAtualizarPanel')} :#{p:component('medidoresAtualizarDataTable')} :#{p:component('patrimonioAtualizarPanel')}" -->
+			<!-- 					onclick="javascript:window.location='#ativoTabView'" /> -->
+			<p:commandButton value="#{wd['button.cancel']}" type="reset"
+				icon="ui-icon-cancel"
+				onclick="salaTabs.remove(salaTabs.getActiveIndex())"
+				styleClass="w4 r8" />
+			<!-- 			</div> -->
+
+		</p:panel>
+
+	</h:form>
+</div>
+</html>

@@ -43,7 +43,7 @@
 	<!-- ACL -->
 
 <!-- 
-	<beans:bean class="br.com.sts.spring.security.AffirmativeBasedDecision"
+	<beans:bean class="br.com.saude.spring.security.AffirmativeBasedDecision"
 		id="aclDecisionManager">
 		<beans:constructor-arg>
 			<beans:list>

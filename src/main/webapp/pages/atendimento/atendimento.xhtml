@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:outputScript name="utils.js" library="javascript" />
+<div class="selectedMenu">
+	<span class="headerTitle">Realizar Atendimento</span>
+</div>
+<p:tabView id="atendimentoTabView" widgetVar="atendimentoTabs">
+	<p:ajax event="tabClose" process="@all" />
+	<p:ajax event="tabChange" process="@all" />
+
+	<p:tab id="createTab" title="Registrar">
+		<ui:include src="criarAtendimento.xhtml" />
+	</p:tab>
+	<p:tab id="findTab" title="#{wd['tab.search']}"
+		binding="#{buscarAtendimentoController.findTab}">
+		<ui:include src="buscarAtendimento.xhtml" />
+	</p:tab>
+	<p:tab id="editTab" title="#{wd['tab.change']}" rendered="false"
+		binding="#{buscarAtendimentoController.editTab}" closable="true">
+		<ui:include src="editarAtendimento.xhtml" />
+	</p:tab>
+</p:tabView>
+</html>

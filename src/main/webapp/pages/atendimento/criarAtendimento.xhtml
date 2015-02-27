@@ -1,0 +1,290 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="container">
+	<h:form id="createAtendimentoForm">
+		<p:messages id="messages" />
+
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix" id="dataPanel">
+
+			<p:focus context="dataPanel" />
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['paciente']}" for="atendimentoAC" />
+				</div>
+				<div class="col-md-9">
+
+					<p:autoComplete id="atendimentoAC" minQueryLength="3"
+						label="#{lb['paciente']}" required="true"
+						completeMethod="#{atendimentoController.autocompletarPaciente}"
+						queryDelay="3" widgetVar="atendimentoAC" var="var"
+						itemLabel="#{var.nome eq null ? '' : var.nome}" itemValue="#{var}"
+						process="@this" value="#{atendimentoController.paciente}"
+						dropdown="true" converter="autocompleteConverter"
+						scrollHeight="250">
+						<p:ajax event="itemSelect" process="@this"
+							update=":atendimentoTabView:createAtendimentoForm:documentosDataTable, :atendimentoTabView:createAtendimentoForm:atendimentoT, :atendimentoTabView:createAtendimentoForm:respMatriFunc, :atendimentoTabView:createAtendimentoForm:dataEmissao, :atendimentoTabView:createAtendimentoForm:dataI, :atendimentoTabView:createAtendimentoForm:dataF, :atendimentoTabView:createAtendimentoForm:totalP1, :atendimentoTabView:createAtendimentoForm:totalP2, :atendimentoTabView:createAtendimentoForm:numDoc1, :atendimentoTabView:createAtendimentoForm:numDoc2"
+							listener="#{atendimentoController.carregarPasses()}" />
+						<f:attribute name="entityClass"
+							value="br.com.saude.prontuario.model.entities.Paciente" />
+					</p:autoComplete>
+				</div>
+				<div class="col-md-3">
+					<p:outputLabel value="Tipo" for="atendimentoT" />
+				</div>
+				<div class="col-md-9">
+
+					<p:autoComplete id="atendimentoT" minQueryLength="3"
+						label="#{lb['tipoAtendimento']}" required="true"
+						completeMethod="#{atendimentoController.autocompletarTipoAtendimento}"
+						queryDelay="3" widgetVar="atendimentoT" var="var"
+						itemLabel="#{var.descricao eq null ? '' : var.descricao}"
+						itemValue="#{var}" process="@this"
+						value="#{atendimentoController.tipoAtendimento}" dropdown="true"
+						converter="autocompleteConverter" scrollHeight="250">
+						<p:ajax event="itemSelect" process="@this" />
+						<f:attribute name="entityClass"
+							value="br.com.saude.prontuario.model.entities.TipoAtendimento" />
+					</p:autoComplete>
+				</div>
+			</div>
+			<div class="clear" />
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['atendimento.descricao']}"
+						for="respMatriFunc" />
+				</div>
+				<div class="col-md-22">
+					<p:inputText id="respMatriFunc"
+						value="#{atendimentoController.atendimento.descricao}"
+						required="true" />
+				</div>
+			</div>
+
+
+			<div class="clear" />
+			<div class="row">
+
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['tipoAtendimento.data']}"
+						for="dataEmissao" />
+				</div>
+				<div class="col-md-4">
+					<p:calendar id="dataEmissao"
+						value="#{atendimentoController.atendimento.dataAtendimento}"
+						pattern="dd/MM/yyyy" locale="pt" styleClass="fieldFullWidth"
+						navigator="true" effect="fadeIn" showOn="button" />
+				</div>
+				<div class="col-md-4">
+					<p:outputLabel value="Data Início" for="dataI" />
+				</div>
+				<div class="col-md-4">
+					<p:calendar id="dataI"
+						value="#{atendimentoController.atendimento.dataInicio}"
+						pattern="dd/MM/yyyy" locale="pt" styleClass="fieldFullWidth"
+						navigator="true" effect="fadeIn" required="true" showOn="button" />
+				</div>
+				<div class="col-md-4">
+					<p:outputLabel value="Data Final" for="dataF" />
+				</div>
+				<div class="col-md-4">
+					<p:calendar id="dataF"
+						value="#{atendimentoController.atendimento.dataFinal}"
+						pattern="dd/MM/yyyy" locale="pt" styleClass="fieldFullWidth"
+						navigator="true" effect="fadeIn" required="true" showOn="button" />
+				</div>
+				<div class="clear" />
+				<!--<div class="col-md-4">
+					<p:outputLabel value="Quantidade Total" for="numDoc" />
+				</div>
+				<div class="col-md-3">
+					<p:inputText id="numDoc"
+						value="#{atendimentoController.atendimento.quantidade}"
+						required="false" immediate="true">
+					</p:inputText>
+				</div>
+				<div class="col-md-4">
+					<p:outputLabel value="Passes Restantes: " for="totalP"
+						style="font-size: 16px" />
+				</div>
+				<div class="col-md-1">
+					<p:outputLabel id="totalP" style="font-size: 20px"
+						value="#{atendimentoController.atendimento.quantidade - atendimentoController.contadorPasses}">
+					</p:outputLabel>
+				</div> -->
+				<div class="clear" />
+				<div class="col-md-4">
+					<p:outputLabel value="Quantidade Sala 01" for="numDoc1" />
+				</div>
+				<div class="col-md-3">
+					<p:inputText id="numDoc1"
+						value="#{atendimentoController.atendimento.quantidadesala1}"
+						required="false" immediate="true">
+					</p:inputText>
+				</div>
+				<div class="col-md-4">
+					<p:outputLabel value="Quantidade Sala 02" for="numDoc2" />
+				</div>
+				<div class="col-md-3">
+					<p:inputText id="numDoc2"
+						value="#{atendimentoController.atendimento.quantidadesala2}"
+						required="false" immediate="true">
+					</p:inputText>
+				</div>
+				<div class="clear" />
+				<div class="col-md-6">
+					<p:outputLabel value="Passes Restantes Sala 01: " for="totalP1"
+						style="font-size: 16px" />
+				</div>
+				<div class="col-md-1">
+					<p:outputLabel id="totalP1" style="font-size: 20px"
+						value="#{atendimentoController.contadorPassesSala01}">
+					</p:outputLabel>
+				</div>
+				<div class="col-md-6">
+					<p:outputLabel value="Passes Restantes Sala 02: " for="totalP2"
+						style="font-size: 16px" />
+				</div>
+				<div class="col-md-1">
+					<p:outputLabel id="totalP2" style="font-size: 20px"
+						value="#{atendimentoController.contadorPassesSala02}">
+					</p:outputLabel>
+				</div>
+			</div>
+
+			<div class="clear" />
+			<fieldset>
+				<legend>Passes</legend>
+				<div class="row">
+					<div class="col-md-2">
+						<p:outputLabel value="Decrição" for="tipoDoc" />
+					</div>
+					<div class="col-md-10">
+						<p:inputText id="tipoDoc"
+							value="#{atendimentoController.sessao.descricao}"
+							immediate="true">
+							<!-- 					<f:convertNumber type="number" minFractionDigits="1" pattern="#0.000" minIntegerDigits="0" /> -->
+						</p:inputText>
+					</div>
+
+					<div class="col-md-2">
+						<p:outputLabel value="#{lb['sala']}" for="salaAC" />
+					</div>
+					<div class="col-md-9">
+
+						<p:autoComplete id="salaAC" minQueryLength="3"
+							label="#{lb['sala']}"
+							completeMethod="#{atendimentoController.autocompletarSala}"
+							queryDelay="3" widgetVar="salaAC" var="var"
+							itemLabel="#{var.descricao eq null ? '' : var.descricao}"
+							itemValue="#{var}" process="@this"
+							value="#{atendimentoController.sala}" dropdown="true"
+							converter="autocompleteConverter" scrollHeight="250">
+							<p:ajax event="itemSelect" process="@this" />
+							<f:attribute name="entityClass"
+								value="br.com.saude.prontuario.model.entities.Sala" />
+						</p:autoComplete>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-md-2">
+						<p:outputLabel value="Observação" for="valorDoc" />
+					</div>
+
+					<div class="col-md-17">
+						<p:inputText id="valorDoc"
+							value="#{atendimentoController.sessao.observacao}">
+						</p:inputText>
+					</div>
+				</div>
+
+				<div class="clear" />
+				<p:commandButton id="adicionarCommandButton"
+					value="#{wd['button.add']}" icon="ui-icon-plusthick"
+					process="@this :atendimentoTabView:createAtendimentoForm:tipoDoc, :atendimentoTabView:createAtendimentoForm:salaAC, :atendimentoTabView:createAtendimentoForm:tipoDoc, :atendimentoTabView:createAtendimentoForm:valorDoc, :atendimentoTabView:createAtendimentoForm:totalP1, :atendimentoTabView:createAtendimentoForm:totalP2, :atendimentoTabView:createAtendimentoForm:numDoc1, :atendimentoTabView:createAtendimentoForm:numDoc2"
+					update=":atendimentoTabView:createAtendimentoForm:documentosDataTable, :atendimentoTabView:createAtendimentoForm:tipoDoc, :atendimentoTabView:createAtendimentoForm:salaAC, :atendimentoTabView:createAtendimentoForm:valorDoc, :atendimentoTabView:createAtendimentoForm:totalP1, :atendimentoTabView:createAtendimentoForm:totalP2, :atendimentoTabView:createAtendimentoForm:numDoc1, :atendimentoTabView:createAtendimentoForm:numDoc2"
+					action="#{atendimentoController.adicionarSessao}"
+					styleClass="w3 r8" style="margin: 5px 5px 5px 5px" />
+				<p:dataTable id="documentosDataTable" draggableColumns="true"
+					emptyMessage="#{wd['item.emptyAddTable']}"
+					value="#{atendimentoController.sessoes}" var="item">
+					<p:column id="colunaOpcao"
+						headerText="#{wd['table.columns.options']}"
+						style="width:50px; ; text-align: center;">
+						<p:commandButton id="editarCommandButton" icon="ui-icon-pencil"
+							process="@this" action="#{atendimentoController.editarSessao}"
+							title="#{wds['table.columns.options.update.hint']}"
+							update=":atendimentoTabView:createAtendimentoForm:documentosDataTable, :atendimentoTabView:createAtendimentoForm:tipoDoc, :atendimentoTabView:createAtendimentoForm:salaAC, :atendimentoTabView:createAtendimentoForm:valorDoc, :atendimentoTabView:createAtendimentoForm:totalP1, :atendimentoTabView:createAtendimentoForm:totalP2, :atendimentoTabView:createAtendimentoForm:numDoc1, :atendimentoTabView:createAtendimentoForm:numDoc2"
+							styleClass="icon">
+							<!-- 								<f:setPropertyActionListener -->
+							<!-- 									target="#{prestacaoContaController.documento}" value="#{item}" /> -->
+							<f:setPropertyActionListener
+								target="#{atendimentoController.sessaoEditar}" value="#{item}" />
+							<p:collector value="#{atendimentoController.sessaoEditar}"
+								removeFrom="#{atendimentoController.sessoes}" />
+						</p:commandButton>
+
+						<p:commandButton id="removerCommandButton" icon="ui-icon-trash"
+							title="#{wd['table.columns.options.delete.hint']}"
+							onclick="PF('removeConfirmDialog').show()" process="@this"
+							styleClass="icon">
+							<f:setPropertyActionListener
+								target="#{atendimentoController.sessaoRemover}" value="#{item}" />
+						</p:commandButton>
+					</p:column>
+
+					<p:column id="colunaTipoDoc" headerText="Descrição">
+						<h:outputLabel value="#{item.descricao}" />
+					</p:column>
+					<p:column id="colunaNumDoc" headerText="Sala">
+						<h:outputLabel value="#{item.sala.descricao}" />
+					</p:column>
+					<!-- 					<p:column id="colunaValorDoc" headerText="Data Inicial"> -->
+					<!-- 						<h:outputLabel value="#{item.dataInicial}"> -->
+					<!-- 						</h:outputLabel> -->
+					<!-- 					</p:column> -->
+					<!-- 					<p:column id="colunaArquivo" headerText="Data Final"> -->
+					<!-- 						<h:outputLabel value="#{item.dataFinal}" /> -->
+					<!-- 					</p:column> -->
+
+					<p:column id="colunaQtd" headerText="Observação">
+						<h:outputLabel value="#{item.observacao}" />
+					</p:column>
+
+				</p:dataTable>
+				<!-- 				</p:outputPanel> -->
+			</fieldset>
+			<div class="clear" />
+			<p:commandButton value="Registrar" update="@form"
+				actionListener="#{atendimentoController.save}"
+				styleClass="col-md-4 r6" icon="ui-icon-disk" />
+			<p:commandButton id="limparCommandButton"
+				value="#{wd['button.clean']}" icon="ui-icon-arrowrefresh-1-w"
+				actionListener="#{atendimentoController.init}" update="@form"
+				process="@this" styleClass="col-md-4 r7">
+			</p:commandButton>
+			<p:confirmDialog id="removeConfirmDialog" global="true"
+				showEffect="fade" hideEffect="fade"
+				message="#{wd['dialog.deleteConfirmation.message']}"
+				header="#{wd['dialog.deleteConfirmation.header']}"
+				widgetVar="removeConfirmDialog" severity="alert">
+				<p:commandButton value="#{wd['dialog.optionYes']}" styleClass="r6"
+					icon="ui-icon-check" oncomplete="PF('removeConfirmDialog').hide()"
+					process="@parent" action="#{atendimentoController.removerSessao}"
+					update=":atendimentoTabView:createAtendimentoForm:documentosDataTable, :atendimentoTabView:createAtendimentoForm:tipoDoc, :atendimentoTabView:createAtendimentoForm:salaAC, :atendimentoTabView:createAtendimentoForm:valorDoc, :atendimentoTabView:createAtendimentoForm:totalP1, :atendimentoTabView:createAtendimentoForm:totalP2, :atendimentoTabView:createAtendimentoForm:numDoc1, :atendimentoTabView:createAtendimentoForm:numDoc2">
+					<p:collector value="#{atendimentoController.sessaoRemover}"
+						removeFrom="#{atendimentoController.sessoes}" />
+				</p:commandButton>
+				<p:commandButton onclick="PF('removeConfirmDialog').hide()"
+					styleClass="r7" icon="ui-icon-cancel"
+					value="#{wd['dialog.optionNo']}" type="button" />
+			</p:confirmDialog>
+		</p:panel>
+	</h:form>
+</div>
+</html>

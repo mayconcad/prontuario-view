@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<div class="container">
+	<h:form id="updateTipoAtendimentoForm">
+		<p:messages id="messages" />
+
+		<p:panel header="#{wd['fieldset.data']}" toggleable="false"
+			styleClass="clearfix">
+			<div class="row">
+				<div class="col-md-2">
+					<p:outputLabel value="#{lb['tipoAtendimento.descricao']}" for="tipoAtendimentoAC" />
+				</div>
+				<div class="col-md-16">
+					<p:inputText value="#{buscarTipoAtendimentoController.tipoAtendimentoEdite.descricao}"
+						for="tipoAtendimentoAC" id="tipoAtendimentoAC" />
+				</div>
+			</div>
+	<div class="clear" />
+			<p:commandButton value="#{wd['button.update']}"
+				update=":tipoAtendimentoTabView, messages"
+				actionListener="#{buscarTipoAtendimentoController.editar}"
+				styleClass="w4 r6" icon="ui-icon-disk" />
+			<!-- 		<p:commandButton id="limparCommandButton" -->
+			<!-- 			value="#{wd['button.cancel']}" icon="ui-icon-cancel" -->
+			<!-- 			actionListener="#{buscarTipoAtendimentoController.init}" update="@form" -->
+			<!-- 			process="@this" styleClass="w4 r7"> -->
+			<!-- 				<p:resetInput target=":tipoAtendimentoTabView:updateTipoAtendimentoForm" /> -->
+			<!-- 		</p:commandButton> -->
+
+			<!-- 			<div class="buttonsAction"> -->
+			<!-- 				<p:commandButton id="salvarCommandButton" icon="ui-icon-disk" value="#{wds['button.update']}" -->
+			<!-- 					update="@form" action="#{controladorConsultarAtivo.salvar}" -->
+			<!-- 					process="@this :#{p:component('dadosAtualizarPanel')} :#{p:component('propriedadesAtualizarPanel')} :#{p:component('medidoresAtualizarDataTable')} :#{p:component('patrimonioAtualizarPanel')}" -->
+			<!-- 					onclick="javascript:window.location='#ativoTabView'" /> -->
+			<p:commandButton value="#{wd['button.cancel']}" type="reset"
+				icon="ui-icon-cancel"
+				onclick="tipoAtendimentoTabs.remove(tipoAtendimentoTabs.getActiveIndex())"
+				styleClass="w4 r8" />
+			<!-- 			</div> -->
+
+		</p:panel>
+
+	</h:form>
+</div>
+</html>

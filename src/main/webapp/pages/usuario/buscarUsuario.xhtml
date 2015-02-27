@@ -9,19 +9,19 @@
 		<p:messages id="messagens" />
 
 		<p:confirmDialog message="#{wd['dialog.deleteConfirmation.message']}"
-			hideEffect="explode" header="#{wd['dialog.alert.header']}"
-			severity="alert" widgetVar="confirmation" modal="true"
-			appendToBody="true">
+			header="#{wd['dialog.alert.header']}"
+			severity="alert" widgetVar="confirmation"
+			global="true" showEffect="fade" hideEffect="fade">
 			<p:commandButton id="btnSim" value="#{wd['dialog.optionYes']}"
-				oncomplete="confirmation.hide();" styleClass="r6"
+				oncomplete="PF('confirmation').hide();" styleClass="r6"
 				action="#{buscarUserController.remover}" process="@this"
 				update="buscarUsuarioTable" />
 			<p:commandButton id="btnNao" value="#{wd['dialog.optionNo']}"
-				onclick="confirmation.hide();" type="button" styleClass="r7" />
+				onclick="PF('confirmation').hide();" type="button" styleClass="r7" />
 		</p:confirmDialog>
 
 		<p:panel header="#{wds['fieldset.filters']}" toggleable="true"
-			id="filtersPanel" styleClass="clearfix columnRight">
+			id="filtersPanel" styleClass="clearfix">
 			<f:validateBean disabled="true">
 				<!-- linha -->
 				<div class="grid_3">
@@ -55,18 +55,18 @@
 
 		<fieldset>
 			<legend>Resultados</legend>
-			<p:dataTable value="#{buscarUserController.usuarios}"
+			<p:dataTable value="#{buscarUserController.usuarios}" currentPageReportTemplate="{currentPage} de {totalPages}"
 				emptyMessage="#{wd['item.emptyFind']}" var="usuario"
 				id="buscarUsuarioTable" paginator="true" rows="5"
 				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
 				<p:column headerText="#{wd['table.columns.options']}"
 					style="width:50px; ; text-align: center;">
-					<p:commandButton icon="ui-icon-trash" onclick="confirmation.show()"
+					<p:commandButton icon="ui-icon-trash" onclick="PF('confirmation').show()"
 						styleClass="icon"
 						title="#{wd['table.columns.options.delete.hint']}">
 						<f:setPropertyActionListener
-							target="#{buscarUserController.userRemove}" value="#{unidade}" />
+							target="#{buscarUserController.userRemove}" value="#{usuario}" />
 					</p:commandButton>
 					<p:commandButton icon="ui-icon-pencil" styleClass="icon"
 						action="#{buscarUserController.carregar}"
@@ -78,7 +78,7 @@
 				</p:column>
 
 				<p:column headerText="#{lb['userSystem.name']}"
-					style="width: 150px; text-align: center;">
+					style="width: 150px; text-align: center; white-space:normal !important;">
 					<h:outputText value="#{usuario.name}" />
 				</p:column>
 				<p:column headerText="#{lb['userSystem.username']}"

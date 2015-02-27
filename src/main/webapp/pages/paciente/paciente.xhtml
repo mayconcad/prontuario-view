@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<div class="selectedMenu">
+	<span class="headerTitle">Paciente</span>
+</div>
+
+<p:tabView id="pacienteTabView" widgetVar="pacienteTabs">
+	<p:ajax event="tabClose" process="@all" />
+	<p:ajax event="tabChange" process="@all" />
+
+	<p:tab id="createTab" title="Cadastrar">
+		<ui:include src="criarPaciente.xhtml" />
+	</p:tab>
+	<p:tab id="findTab" title="#{wd['tab.search']}" binding="#{buscarPacienteController.findTab}">
+		<ui:include src="buscarPaciente.xhtml" />
+	</p:tab>
+	
+	<p:tab title="#{wd['tab.update']}"
+		binding="#{buscarPacienteController.editTab}" rendered="false"
+		closable="true">
+		<ui:include src="editarPaciente.xhtml" />
+	</p:tab>
+</p:tabView>
+
+
+
+</html>

@@ -6,7 +6,7 @@
 
 <div class="container_24">
 	<h:form id="buscarUnidadeForm" prependId="false">
-	<p:messages id="messagens"/>
+		<p:messages id="messagens" />
 
 		<p:confirmDialog message="#{wd['dialog.deleteConfirmation.message']}"
 			hideEffect="explode" header="#{wd['dialog.alert.header']}"
@@ -41,7 +41,8 @@
 				</div>
 				<div class="clear" />
 				<div class="grid_2" style="padding-top: 5px !important">
-					<p:outputLabel value="#{lb['responsavel']}" for="responsavelBuscaAC" />
+					<p:outputLabel value="#{lb['responsavel']}"
+						for="responsavelBuscaAC" />
 				</div>
 				<div class="grid_6">
 					<p:autoComplete id="responsavelBuscaAC" minQueryLength="3"
@@ -53,7 +54,7 @@
 						itemValue="#{var}" process="@this" dropdown="true"
 						scrollHeight="250">
 						<f:attribute name="entityClass"
-							value="br.com.sts.ddum.domain.entities.Responsavel" />
+							value="br.com.saude.prontuario.model.entities.Responsavel" />
 					</p:autoComplete>
 				</div>
 				<div class="grid_2" style="padding-top: 5px !important">
@@ -62,8 +63,8 @@
 				</div>
 				<div class="grid_6">
 					<p:autoComplete id="unidadeContabilBuscaAC" minQueryLength="3"
-						value="#{unidadeController.unidadeContabil}"
-						label="#{lb['unidadeContabil']}" 
+						value="#{buscarUnidadeController.unidadeBusca.unidadeContabil}"
+						label="#{lb['unidadeContabil']}"
 						completeMethod="#{buscarUnidadeController.autocompletarUnidadeContabil}"
 						queryDelay="3" widgetVar="unidadeContabilBuscaAC" var="var"
 						itemLabel="#{var.nome}" itemValue="#{var}" process="@this"
@@ -71,7 +72,7 @@
 						forceSelection="true" scrollHeight="250">
 						<p:ajax event="itemSelect" process="@this" />
 						<f:attribute name="entityClass"
-							value="br.com.sts.ddum.domain.entities.UnidadeContabil" />
+							value="br.com.saude.prontuario.model.entities.UnidadeContabil" />
 					</p:autoComplete>
 				</div>
 
@@ -89,28 +90,26 @@
 						itemLabel="#{var.descricao}" itemValue="#{var}" process="@this"
 						dropdown="true" forceSelection="true" scrollHeight="250">
 						<f:attribute name="entityClass"
-							value="br.com.sts.ddum.domain.entities.ParametroRepasse" />
+							value="br.com.saude.prontuario.model.entities.ParametroRepasse" />
 					</p:autoComplete>
 				</div>
 				<!-- 			<p:spacer styleClass="w10" /> -->
-				<div class="clear"/>
-					<div class="buttonsAction">
-						<p:commandButton value="#{wd['button.search']}"
-							process="findPanel" styleClass="w4 r8"
-							action="#{buscarUnidadeController.buscar}"
-							update="buscarUnidadeTable">
-						</p:commandButton>
-					</div>
+				<div class="clear" />
+<!-- 				<div class="buttonsAction"> -->
+					<p:commandButton value="#{wd['button.search']}" process="findPanel"
+						styleClass="w4 r8" action="#{buscarUnidadeController.buscar}"
+						update="buscarUnidadeTable" icon="ui-icon-search">
+					</p:commandButton>
+<!-- 				</div> -->
 			</p:panel>
 	  </f:validateBean>
 
 		<fieldset>
 			<legend>Resultados</legend>
-			<p:dataTable value="#{buscarUnidadeController.unidades}"
+			<p:dataTable value="#{buscarUnidadeController.unidades}" currentPageReportTemplate="{currentPage} de {totalPages}"
 				emptyMessage="#{wd['item.emptyFind']}" var="unidade"
 				id="buscarUnidadeTable" paginator="true" rows="5"
-				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				>
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
 				<p:column headerText="#{wd['table.columns.options']}"
 					style="width:50px; ; text-align: center;">
@@ -132,28 +131,33 @@
 				</p:column>
 
 				<p:column headerText="#{lb['unidade.nome']}"
-					style="width: 150px; text-align: center;">
-					<h:outputText value="#{unidade.nome}" style="font-weight:100"/>
+					style="width: 150px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{unidade.nome}" style="font-weight:100" />
 				</p:column>
 
 				<p:column headerText="#{lb['responsavel']}"
-					style="width: 150px; text-align: center;">
-					<h:outputText value="#{unidade.responsavel.nome}" style="font-weight:100"/>
+					style="width: 150px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{unidade.responsavel.nome}"
+						style="font-weight:100" />
 				</p:column>
 				<p:column headerText="#{lb['unidadeContabil']} Contábil"
-					style="width: 150px; text-align: center;">
-					<h:outputText value="#{unidade.unidadeContabil.nome}" style="font-weight:100"/>
+					style="width: 150px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{unidade.unidadeContabil.nome}"
+						style="font-weight:100" />
 				</p:column>
 
 				<p:column headerText="#{lb['parametroRepasse']}"
-					style="width: 150px; text-align: center;">
-					<h:outputText value="#{unidade.parametroRepasse.descricao}" style="font-weight:100"/>
+					style="width: 150px; text-align: center; white-space:normal !important;">
+					<h:outputText value="#{unidade.parametroRepasse.descricao}"
+						style="font-weight:100" />
 				</p:column>
 
 				<p:column headerText="#{lb['unidade.valorRepasse']}"
-					style="width: 150px; text-align: center;">
-					<h:outputText value="#{unidade.parametroRepasse.valorRepasse}"
-						styleClass="currency" style="font-weight:100"/>
+					style="width: 150px; text-align: center; white-space:normal !important;">
+					<h:outputLabel value="#{unidade.parametroRepasse.valorRepasse}"
+						style="font-weight:100">
+						<f:convertNumber type="currency" currencyCode="BRL" />
+					</h:outputLabel>
 				</p:column>
 			</p:dataTable>
 		</fieldset>
